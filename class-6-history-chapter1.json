@@ -1,0 +1,230 @@
+{
+    "question": "Q1. Consider the following statements regarding the earliest inhabitants of the Narmada Valley:\n1. They were primarily farmers who grew wheat and barley.\n2. They were skilled gatherers who possessed an extensive knowledge of the surrounding forest wealth.\n3. They relied on hunting animals as part of their subsistence pattern.\n\nWhich of the statements above is/are correct?",
+    "answers": [
+      { "text": "A) 1 and 2 only", "correct": false },
+      { "text": "B) 2 and 3 only", "correct": true },
+      { "text": "C) 1 and 3 only", "correct": false },
+      { "text": "D) 1, 2, and 3", "correct": false }
+    ],
+    "explanation": "According to the source, the earliest people along the Narmada were \"skilled gatherers\" who lived there for several hundred thousand years. Their survival strategy relied on collecting roots, fruits, and forest produce, as well as hunting animals. Statement 1 is incorrect because the transition to growing crops like wheat and barley is specifically associated with the Sulaiman and Kirthar hills 8,000 years ago, not the earliest Narmada inhabitants. This distinction highlights the long-term continuity of gathering before the agricultural revolution."
+  },
+  {
+    "question": "Q2. Agriculture in the Indian subcontinent first began approximately 8,000 years ago in which specific geographic region?",
+    "answers": [
+      { "text": "A) The banks of the river Indus", "correct": false },
+      { "text": "B) The Sulaiman and Kirthar hills", "correct": true },
+      { "text": "C) The banks of the river Son", "correct": false },
+      { "text": "D) Along the seacoasts", "correct": false }
+    ],
+    "explanation": "The source identifies the Sulaiman and Kirthar hills in the northwest as the areas where men and women first began to grow crops like wheat and barley about 8,000 years ago. This represents the earliest documented shift toward a sedentary lifestyle in the subcontinent, predating the urbanization of the Indus Valley."
+  },
+  {
+    "question": "Q3. Regarding the development of agriculture in the subcontinent, consider the following pairs:\n1. Rice Cultivation: North of the Vindhyas\n2. Wheat and Barley: Sulaiman Hills\n3. Early Agriculture: Garo Hills\n\nWhich of the pairs given above are correctly matched?",
+    "answers": [
+      { "text": "A) 1 and 2 only", "correct": false },
+      { "text": "B) 2 and 3 only", "correct": false },
+      { "text": "C) 1 and 3 only", "correct": false },
+      { "text": "D) 1, 2, and 3", "correct": true }
+    ],
+    "explanation": "The source confirms that wheat and barley were first grown in the Sulaiman and Kirthar hills. Agriculture also developed in the Garo hills. Crucially, the places where rice was first grown are specifically located to the north of the Vindhyas. Accurate geographic identification of these \"cradles of agriculture\" is essential for understanding regional specialization in early human history."
+  },
+  {
+    "question": "Q4. Evaluate the significance of the 8,000-year-old settlements in the Sulaiman and Kirthar hills in the context of human social evolution.",
+    "answers": [
+      { "text": "A) They represent the first instance of nomadic hunter-gatherer groups forming large-scale empires.", "correct": false },
+      { "text": "B) They mark the transition from food gathering to animal rearing and permanent village life.", "correct": true },
+      { "text": "C) They indicate the earliest use of stone inscriptions to record agricultural cycles.", "correct": false },
+      { "text": "D) They served as the primary trade hubs for the first cities on the Indus.", "correct": false }
+    ],
+    "explanation": "The transition at these sites is significant because it involved not only the cultivation of crops (wheat/barley) but also the rearing of animals (sheep, goat, cattle) and the establishment of permanent villages. This shift from a nomadic existence to a \"village\" structure provided the social and economic stability required to support larger populations and eventually, urbanization."
+  },
+  {
+    "question": "Q5. Which of the following is an accurate assessment of the \"skilled gatherers\" as defined by the early history of the Narmada?",
+    "answers": [
+      { "text": "A) They were the first people to use a countdown dating system (BC).", "correct": false },
+      { "text": "B) Their lifestyle was defined by a deep botanical understanding of their environment for food collection.", "correct": true },
+      { "text": "C) They lived in cities that flourished 4,700 years ago.", "correct": false },
+      { "text": "D) They were the primary authors of the Rigveda.", "correct": false }
+    ],
+    "explanation": "Skilled gatherers are defined by their knowledge of the \"vast wealth of plants in the surrounding forests.\" Unlike later farmers, they did not produce food but collected roots, fruits, and other forest produce. This represents the longest phase of human history in the subcontinent, rooted in environmental harmony rather than environmental manipulation."
+  },
+  {
+    "question": "Q6. Which of the following statements best reflects the chronological development of cities in the Indian subcontinent?",
+    "answers": [
+      { "text": "A) Urbanization began simultaneously on the banks of the Indus and the Ganga 4,700 years ago.", "correct": false },
+      { "text": "B) Cities on the Ganga and the seacoasts developed approximately 2,200 years after the earliest Indus cities.", "correct": true },
+      { "text": "C) The earliest cities developed north of the Vindhyas about 8,000 years ago.", "correct": false },
+      { "text": "D) Urban centers first appeared in Magadha 3,500 years ago.", "correct": false }
+    ],
+    "explanation": "The source provides a clear timeline: the earliest cities flourished on the Indus about 4,700 years ago, while cities on the Ganga and its tributaries emerged about 2,500 years ago. This 2,200-year gap highlights the Indus valley as the site of the subcontinent's \"earliest\" urbanization, whereas the Ganga valley represents a later, secondary phase of urban growth."
+  },
+  {
+    "question": "Q7. Statement 1 (Assertion): The kingdom of Magadha became a powerful regional entity around 2,500 years ago.\nStatement 2 (Reason): It was strategically located in the area along the river Son, south of the Ganga.",
+    "answers": [
+      { "text": "A) Both 1 and 2 are correct, and 2 is the correct explanation for 1.", "correct": true },
+      { "text": "B) Both 1 and 2 are correct, but 2 is not the correct explanation for 1.", "correct": false },
+      { "text": "C) 1 is correct, but 2 is incorrect.", "correct": false },
+      { "text": "D) 1 is incorrect, but 2 is correct.", "correct": false }
+    ],
+    "explanation": "The source identifies Magadha as the area along the river Son, south of the Ganga. It notes that its rulers were \"very powerful\" and set up a \"large kingdom.\" The strategic location near major river systems (tributaries like the Son and the main Ganga) provided the water, transport, and fertile land necessary to sustain such a massive power center, making Statement 2 a valid reason for the strength mentioned in Statement 1."
+  },
+  {
+    "question": "Q8. What defines a \"tributary\" in the context of the early settlements on the Indus and Ganga?",
+    "answers": [
+      { "text": "A) A large river that flows directly into the sea.", "correct": false },
+      { "text": "B) Smaller rivers that flow into a larger river.", "correct": true },
+      { "text": "C) A man-made canal used for irrigating rice north of the Vindhyas.", "correct": false },
+      { "text": "D) The main channel of a river after it splits near the coast.", "correct": false }
+    ],
+    "explanation": "According to the \"Important Terms\" in the source, tributaries are \"smaller rivers which flow into a large river.\" These were vital for early urbanization (as seen with the Indus and its tributaries 4,700 years ago) because they expanded the fertile area available for settlement and provided a network for inland movement."
+  },
+  {
+    "question": "Q9. The name \"India\" evolved through foreign contact with the Northwest. In this context, consider the following:\n1. The word \"India\" is derived from the Sanskrit word Sindhu.\n2. The Iranians and Greeks referred to the river Indus as the Hindos or the Indos.\n3. The name \"India\" was applied specifically to the land lying to the west of the Indus river.\n\nWhich of the statements above are correct?",
+    "answers": [
+      { "text": "A) 1 and 2 only", "correct": true },
+      { "text": "B) 2 and 3 only", "correct": false },
+      { "text": "C) 1 and 3 only", "correct": false },
+      { "text": "D) 1, 2, and 3", "correct": false }
+    ],
+    "explanation": "Statements 1 and 2 are correct. The source explicitly states the name comes from the Indus (Sindhu in Sanskrit) and was used by Iranians and Greeks. Statement 3 is incorrect because the land to the east of the river was called India. This is a critical distinction in historical geography—\"India\" was a term used by outsiders to describe the land beyond the Indus barrier."
+  },
+  {
+    "question": "Q10. The name \"Bharat\" is mentioned in the Rigveda. What was its original application approximately 3,500 years ago?",
+    "answers": [
+      { "text": "A) It was the official name of the Magadha Empire.", "correct": false },
+      { "text": "B) It referred to the entire subcontinent from the Himalayas to the sea.", "correct": false },
+      { "text": "C) It was used for a group of people living in the north-west.", "correct": true },
+      { "text": "D) It was a Greek term for the people who grew rice north of the Vindhyas.", "correct": false }
+    ],
+    "explanation": "The source states that the name \"Bharat\" was used for a group of people who lived in the north-west. They are mentioned in the Rigveda, the earliest Sanskrit composition (3,500 years ago). It was only later that the name came to be used for the entire country."
+  },
+  {
+    "question": "Q11. Arrange the following historical markers in the correct chronological order, from the oldest to the most recent:\n1. Composition of the Rigveda.\n2. The flourishing of the earliest cities on the Indus.\n3. The beginning of agriculture in the Sulaiman/Kirthar hills.\n4. The development of cities in the Ganga Valley.",
+    "answers": [
+      { "text": "A) 3—2—1—4", "correct": true },
+      { "text": "B) 3—1—2—4", "correct": false },
+      { "text": "C) 2—3—1—4", "correct": false },
+      { "text": "D) 1—3—2—4", "correct": false }
+    ],
+    "explanation": "According to the \"Important Dates\" and text: (3) Agriculture began 8,000 years ago; (2) Indus cities flourished 4,700 years ago; (1) Rigveda was composed 3,500 years ago; and (4) Ganga cities/Magadha developed 2,500 years ago. This timeline (3-2-1-4) illustrates the long progression from subsistence farming to the first wave of urbanization, followed by linguistic/cultural consolidation (Rigveda) and finally the second wave of urbanization."
+  },
+  {
+    "question": "Q12. The term \"manuscript\" is derived from the Latin word manu. What does this root word literally mean?",
+    "answers": [
+      { "text": "A) Ancient", "correct": false },
+      { "text": "B) Written", "correct": false },
+      { "text": "C) Hand", "correct": true },
+      { "text": "D) Hidden", "correct": false }
+    ],
+    "explanation": "The source explains that manuscripts are so named because they were \"written by hand.\" This comes from the Latin word manu, meaning hand. This distinguishes them from later printed or inscribed works."
+  },
+  {
+    "question": "Q13. Regarding the languages used in ancient books and records, consider the following statements:\n1. Sanskrit was the exclusive language for all manuscripts and inscriptions.\n2. Prakrit was the language used by the ordinary people.\n3. Tamil was also used for early compositions and records.\n\nWhich of the statements above is/are correct?",
+    "answers": [
+      { "text": "A) 1 only", "correct": false },
+      { "text": "B) 2 and 3 only", "correct": true },
+      { "text": "C) 1 and 2 only", "correct": false },
+      { "text": "D) 1, 2, and 3", "correct": false }
+    ],
+    "explanation": "The source notes that while many books were written in Sanskrit, others were in Prakrit (the language of ordinary people) and Tamil. Statement 1 is incorrect because it claims Sanskrit was \"exclusive,\" ignoring the diverse sociolinguistic landscape where different languages served different social tiers."
+  },
+  {
+    "question": "Q14. What was the primary strategic advantage of using \"inscriptions\" on stone or metal over \"manuscripts\" on palm leaves?",
+    "answers": [
+      { "text": "A) Inscriptions could be easily moved and traded between kingdoms.", "correct": false },
+      { "text": "B) The hard, imperishable surface ensured the record survived for a long time and could not be easily destroyed by insects or decay.", "correct": true },
+      { "text": "C) Inscriptions allowed for more detailed illustrations of scientific practices than birch bark.", "correct": false },
+      { "text": "D) Inscriptions were the only medium used for religious practices in monasteries.", "correct": false }
+    ],
+    "explanation": "As per the source, manuscripts were fragile and \"often eaten by insects\" or destroyed. Inscriptions, being on \"relatively hard surfaces such as stone or metal,\" were permanent. This durability was essential for kings who wanted their \"orders\" and \"victories in battle\" to be seen, read, and obeyed by future generations."
+  },
+  {
+    "question": "Q15. The \"birch\" tree, whose bark was used for writing manuscripts, is specifically found in which geographic region?",
+    "answers": [
+      { "text": "A) The Vindhya Range", "correct": false },
+      { "text": "B) The banks of the Narmada", "correct": false },
+      { "text": "C) The Himalayas", "correct": true },
+      { "text": "D) The Garo Hills", "correct": false }
+    ],
+    "explanation": "The source states that manuscripts were written on palm leaves or \"the specially prepared bark of a tree known as the birch, which grows in the Himalayas.\" This shows how early writing materials were dependent on local ecological resources."
+  },
+  {
+    "question": "Q16. Which of the following best describes the content found within ancient manuscripts?",
+    "answers": [
+      { "text": "A) They were restricted solely to the records of royal victories in battle.", "correct": false },
+      { "text": "B) They dealt with various subjects including religious beliefs, the lives of kings, medicine, and science.", "correct": true },
+      { "text": "C) They were primarily used to record the daily accounts of skilled gatherers.", "correct": false },
+      { "text": "D) They were used only to record the names of kings in \"cartouches.\"", "correct": false }
+    ],
+    "explanation": "Manuscripts were comprehensive; the source mentions they dealt with \"all kinds of subjects: religious beliefs and practices, the lives of kings, medicine and science,\" in addition to epics, poems, and plays. This makes them a rich source for cultural and social history, unlike inscriptions which were often more functional or political."
+  },
+  {
+    "question": "Q17. According to the definitions provided in the text, who are the individuals that specifically study the objects made and used in the past?",
+    "answers": [
+      { "text": "A) Historians", "correct": false },
+      { "text": "B) Scribes", "correct": false },
+      { "text": "C) Archaeologists", "correct": true },
+      { "text": "D) Gatherers", "correct": false }
+    ],
+    "explanation": "The source defines \"archaeologists\" as those who study the remains of buildings, paintings, sculpture, and objects like tools, weapons, pots, and coins. While \"historians\" are scholars who study the past, the specific study of physical objects and excavation is the domain of the archaeologist."
+  },
+  {
+    "question": "Q18. Consider the following statements regarding historical \"sources\":\n1. The term \"source\" refers to information found from manuscripts, inscriptions, coins, and monuments.\n2. Historians use these sources as clues to reconstruct the past bit by bit.\n3. Only written records are considered valid sources for reconstruction.\n\nWhich of the statements above are correct?",
+    "answers": [
+      { "text": "A) 1 and 2 only", "correct": true },
+      { "text": "B) 2 and 3 only", "correct": false },
+      { "text": "C) 1 and 3 only", "correct": false },
+      { "text": "D) 1, 2, and 3", "correct": false }
+    ],
+    "explanation": "Statements 1 and 2 are correct. A \"source\" is the information found from all types of remains (written or physical). Statement 3 is incorrect because coins, monuments, and excavated objects (non-written) are also vital sources. Historians are described as using these clues to rebuild history like a detective."
+  },
+  {
+    "question": "Q19. Why is the study of \"hard, imperishable substances\" particularly valuable to an archaeologist?",
+    "answers": [
+      { "text": "A) Such substances were only used by the most powerful rulers in Magadha.", "correct": false },
+      { "text": "B) They are more likely to survive over thousands of years compared to organic materials.", "correct": true },
+      { "text": "C) These materials were the only ones that could be inscribed with Sanskrit.", "correct": false },
+      { "text": "D) Only hard substances can be found through the process of excavation.", "correct": false }
+    ],
+    "explanation": "The source explicitly states that \"objects that are made of hard, imperishable substances usually survive for a long time.\" This is a fundamental principle of archaeology: the historical record is biased toward durable materials like stone, metal, or baked clay, which do not decay like wood or cloth."
+  },
+  {
+    "question": "Q20. In the temporal framework used by historians, what do the Latin words Anno Domini (AD) signify?",
+    "answers": [
+      { "text": "A) After the death of Christ.", "correct": false },
+      { "text": "B) In the year of the Lord.", "correct": true },
+      { "text": "C) Ancient Dates of the Indus.", "correct": false },
+      { "text": "D) Before the birth of Christ.", "correct": false }
+    ],
+    "explanation": "AD stands for the Latin words Anno Domini, meaning \"in the year of the Lord\" (referring to Christ). It is used for dates following the birth of Christ. The common misconception that it means \"After Death\" is incorrect."
+  },
+  {
+    "question": "Q21. Which of the following correctly describes the \"countdown\" nature of the BC dating system?",
+    "answers": [
+      { "text": "A) 200 BC refers to a time 200 years after the birth of Christ.", "correct": false },
+      { "text": "B) Dates in BC increase as they move toward the birth of Christ (e.g., 1, 2, 3...).", "correct": false },
+      { "text": "C) 500 BC is a date that occurred earlier in time than 200 BC.", "correct": true },
+      { "text": "D) The BC system only began with the composition of the Rigveda.", "correct": false }
+    ],
+    "explanation": "The source explains that BC (Before Christ) runs in a \"countdown format\" (10, 9, 8... 1) leading up to the birth of Christ. Therefore, 500 BC happened before 200 BC. Once the birth of Christ is reached, the dates begin moving forward in the AD format."
+  },
+  {
+    "question": "Q22. What is the primary purpose of \"decipherment\" in historical study?",
+    "answers": [
+      { "text": "A) To determine the exact age of a palm leaf manuscript using chemistry.", "correct": false },
+      { "text": "B) To understand and read scripts and languages that have changed over time.", "correct": true },
+      { "text": "C) To excavate tools and ornaments from the surface of the earth.", "correct": false },
+      { "text": "D) To identify the strategic power of the Magadha kingdom.", "correct": false }
+    ],
+    "explanation": "As per the source, scripts and languages used in the past change over time. Decipherment is the \"process through which scholars understand what was written\" in these ancient, otherwise unreadable scripts."
+  },
+  {
+    "question": "Q23. Analysis of the Rosetta Stone decipherment revealed that:\n1. Scholars used their knowledge of Greek to identify names in the Egyptian script.\n2. Royal names were enclosed in a small frame called a \"cartouche.\"\n3. A lion symbol represented the letter 'A' and a bird represented 'L'.\n\nWhich of the statements above is/are correct?",
+    "answers": [
+      { "text": "A) 1 and 2 only", "correct": true },
+      { "text": "B) 2 and 3 only", "correct": false },
+      { "text": "C) 1 and 3 only", "correct": false },
+      { "text": "D) 1, 2, and 3", "correct": false }
+    ],
+    "explanation": "Statements 1 and 2 are correct. Scholars read the Greek text to find the names of kings and queens, which were in a cartouche. Statement 3 is incorrect because the source specifies that \"a lion stood for L, and a bird for A.\" This meticulous matching of sounds allowed the entire script to eventually be read."
+  }
