@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="theme-color" content="#0f766e" />
+<title>Gyani Learners — General Knowledge Quiz</title>
+<style>
+/*==========================
+  THEME — Teal / Mint Academic
+==========================*/
+:root{
+/* Primary Tones: Navy to Royal Blue */
+  --teal-900: #0a192f; /* Deep Navy */
+  --teal-800: #1e3a8a; /* Dark Royal Blue */
+  --teal-700: #1d4ed8; /* Main brand color: Royal Blue */
+  --teal-600: #2563eb; /* Bright Blue */
+  --teal-500: #3b82f6; /* Lighter Blue */
+
+  /* Background/Accent Tones: Warm sunrise colors and White */
+  --mint-300: #fef08a; /* Soft Yellow accent */
+  --mint-200: #ffedd5; /* Soft Orange accent */
+  --mint-100: #ffffff; /* Pure White background */
+
+  /* Text and border colors: Deep navy/slate tones for readability */
+  --ink: #020617;      /* Main text color: Almost black/Deepest navy */
+  --ink-2: #1e293b;    /* Secondary dark text */
+  --muted: #64748b;    /* Muted/grayed out text */
+  
+  /* Line color: Royal Blue (RGB: 29, 78, 216) to match --teal-700 */
+  --line: rgba(29, 78, 216, 0.18);
+  --glass:rgba(255,255,255,.55);
+  --glass-strong:rgba(255,255,255,.72);
+  --glass-dark:rgba(11,31,30,.55);
+  --danger:#dc2626;
+  --danger-soft:#fee2e2;
+  --success:#059669;
+  --success-soft:#d1fae5;
+  --warn:#d97706;
+  --warn-soft:#fef3c7;
+  --shadow-sm: 0 2px 6px rgba(11,59,57,.08), 0 1px 2px rgba(11,59,57,.05);
+  --shadow-md: 0 10px 30px rgba(11,59,57,.10), 0 2px 8px rgba(11,59,57,.06);
+  --shadow-lg: 0 24px 60px rgba(11,59,57,.18), 0 6px 16px rgba(11,59,57,.08);
+  --radius-sm: 12px;
+  --radius: 18px;
+  --radius-lg: 24px;
+  --blur: 18px;
+  --anim: 260ms;
+  --fs: 16px;
+}
+/* Font size scale (Settings) */
+html[data-fs="sm"]{ --fs:14px; }
+html[data-fs="md"]{ --fs:16px; }
+html[data-fs="lg"]{ --fs:18px; }
+html[data-fs="xl"]{ --fs:20px; }
+
+/* Animation speed (Settings) */
+html[data-anim="off"]{ --anim: 0ms; }
+html[data-anim="fast"]{ --anim: 140ms; }
+html[data-anim="normal"]{ --anim: 260ms; }
+html[data-anim="slow"]{ --anim: 420ms; }
+
+/* Blur (Settings) */
+html[data-blur="off"]{ --blur: 0px; }
+html[data-blur="low"]{ --blur: 8px; }
+html[data-blur="med"]{ --blur: 18px; }
+html[data-blur="high"]{ --blur: 28px; }
+
+*{ box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html,body{
+  margin:0; padding:0; min-height:100%;
+  font-size: var(--fs);
+  font-family: "Fraunces","Playfair Display",Georgia,"Iowan Old Style","Apple Garamond",serif;
+  color: var(--ink);
+  line-height:1.5;
+}
+body{
+  min-height:100vh;
+  background:
+    linear-gradient(160deg, rgba(230,255,251,.85) 0%, rgba(204,251,241,.75) 40%, rgba(167,243,208,.55) 100%),
+    url("https://kommodo.ai/i/YIOOUA4S9v59nDQRdPnN") center center / cover no-repeat fixed,
+    linear-gradient(135deg,#e6fffb,#ccfbf1 60%,#a7f3d0);
+  background-blend-mode: normal;
+  -webkit-font-smoothing: antialiased;
+  overflow-x:hidden;
+}
+
+/* Soft floating orbs for depth */
+body::before,body::after{
+  content:""; position:fixed; z-index:0; pointer-events:none;
+  filter: blur(60px); opacity:.55;
+}
+body::before{
+  width:420px;height:420px;
+  background: radial-gradient(closest-side,#2dd4bf,transparent 70%);
+  top:-140px; left:-120px;
+}
+body::after{
+  width:520px;height:520px;
+  background: radial-gradient(closest-side,#14958b,transparent 70%);
+  right:-160px; bottom:-160px;
+}
+
+/* Layout container */
+.app{
+  position:relative; z-index:1;
+  max-width:1120px; margin:0 auto;
+  padding: 18px 18px 120px;
+}
+@media(min-width: 900px){
+  .app{ padding: 28px 32px 40px; }
+}
+
+/* Top bar */
+.topbar{
+  display:flex; align-items:center; gap:12px;
+  padding:12px 14px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-strong);
+  backdrop-filter: blur(var(--blur)); -webkit-backdrop-filter: blur(var(--blur));
+  border:1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  margin-bottom:18px;
+  position: sticky; top:12px; z-index:20;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:700; letter-spacing:.2px;
+  color:var(--teal-800);
+}
+.brand-logo{
+  width:38px; height:38px; border-radius:12px;
+  background: linear-gradient(135deg,var(--teal-700),var(--teal-500));
+  display:grid; place-items:center; color:white;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.35), var(--shadow-sm);
+  font-family: "Fraunces", serif;
+  font-weight:900; font-size:20px;
+}
+.brand-name{ font-family:"Fraunces",serif; font-size:1.1rem; }
+.brand-name small{ display:block; font-weight:500; color:var(--muted); font-size:.72rem; letter-spacing:.4px;}
+.top-spacer{ flex:1; }
+
+.icon-btn{
+  appearance:none; border:0; background:transparent;
+  width:42px; height:42px; border-radius:12px;
+  display:grid; place-items:center;
+  color:var(--teal-800); cursor:pointer;
+  transition: background var(--anim) ease, transform var(--anim) ease;
+}
+.icon-btn:hover{ background: rgba(15,118,110,.08); }
+.icon-btn:active{ transform: scale(.96); }
+.icon-btn svg{ width:22px; height:22px; }
+
+/* Breadcrumb */
+.crumb{
+  display:flex; flex-wrap:wrap; gap:6px; align-items:center;
+  padding: 6px 12px;
+  margin-bottom:14px;
+  color:var(--muted); font-size:.85rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.crumb a{ color:var(--teal-700); cursor:pointer; text-decoration:none; }
+.crumb a:hover{ text-decoration:underline; }
+.crumb .sep{ opacity:.55; }
+
+/* Cards / glass surfaces */
+.card{
+  position:relative;
+  background: var(--glass);
+  backdrop-filter: blur(var(--blur)); -webkit-backdrop-filter: blur(var(--blur));
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  padding: 20px;
+  transition: transform var(--anim) ease, box-shadow var(--anim) ease, background var(--anim) ease;
+}
+.card.solid{ background: var(--glass-strong); }
+.card:hover{ box-shadow: var(--shadow-lg); }
+.card h2, .card h3{ margin: 0 0 10px; font-family:"Fraunces",serif; color:var(--teal-900); }
+
+/* Section heading */
+.section-title{
+  display:flex; align-items:end; justify-content:space-between; gap:10px;
+  margin: 22px 4px 12px;
+}
+.section-title h2{
+  margin:0; font-family:"Fraunces",serif; font-weight:700;
+  font-size: 1.4rem; color:var(--teal-900);
+  letter-spacing:.2px;
+}
+.section-title .hint{ color:var(--muted); font-size:.85rem; font-family: system-ui, sans-serif;}
+
+/* Buttons */
+.btn{
+  --bg: var(--teal-700);
+  --fg: #fff;
+  position:relative; overflow:hidden;
+  appearance:none; border:0; cursor:pointer;
+  padding: 12px 18px; min-height:46px;
+  border-radius: 999px;
+  background: var(--bg); color: var(--fg);
+  font-weight:600; font-family: system-ui, sans-serif; font-size:.95rem;
+  letter-spacing:.2px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--anim) ease, box-shadow var(--anim) ease, background var(--anim) ease;
+  display:inline-flex; align-items:center; gap:8px; justify-content:center;
+}
+.btn:hover{ box-shadow: var(--shadow-md); }
+.btn:active{ transform: translateY(1px) scale(.99); }
+.btn.ghost{ --bg: transparent; --fg: var(--teal-800); box-shadow:none; border:1px solid var(--line); }
+.btn.ghost:hover{ background: rgba(15,118,110,.06); }
+.btn.soft{ --bg: var(--mint-200); --fg: var(--teal-900); }
+.btn.dark{ --bg: var(--ink-2); --fg: #e6fffb; }
+.btn.danger{ --bg: #fecaca; --fg: #7f1d1d; }
+.btn.block{ width:100%; }
+.btn:disabled{ opacity:.55; cursor:not-allowed; }
+
+/* Ripple */
+.btn .ripple{
+  position:absolute; border-radius:999px; transform: scale(0);
+  background: rgba(255,255,255,.55);
+  animation: ripple 600ms ease-out forwards;
+  pointer-events:none;
+}
+.btn.ghost .ripple, .btn.soft .ripple{ background: rgba(15,118,110,.18); }
+@keyframes ripple{
+  to{ transform: scale(4); opacity:0; }
+}
+
+/* Inputs */
+.field{
+  display:flex; flex-direction:column; gap:6px;
+  font-family: system-ui, sans-serif;
+}
+.field label{ font-size:.8rem; color:var(--muted); font-weight:600; letter-spacing:.3px; text-transform:uppercase;}
+.field input, .field select, .field textarea{
+  appearance:none; -webkit-appearance:none;
+  width:100%; padding: 12px 14px; min-height:46px;
+  border-radius: 14px; border:1px solid var(--line);
+  background: rgba(255,255,255,.85);
+  color: var(--ink); font-size:1rem;
+  font-family: system-ui, sans-serif;
+  transition: border-color var(--anim) ease, box-shadow var(--anim) ease, background var(--anim) ease;
+}
+.field input:focus, .field select:focus, .field textarea:focus{
+  outline:none;
+  border-color: var(--teal-600);
+  box-shadow: 0 0 0 4px rgba(20,149,139,.18);
+  background:#fff;
+}
+
+/* Grid helpers */
+.grid{ display:grid; gap:14px; }
+.grid.cols-2{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+.grid.cols-3{ grid-template-columns: repeat(1, minmax(0,1fr)); }
+.grid.cols-4{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+@media(min-width:640px){
+  .grid.cols-3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .grid.cols-4{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media(min-width:900px){
+  .grid.cols-4{ grid-template-columns: repeat(4, minmax(0,1fr)); }
+}
+
+/* Tile cards (Classes / Subjects / Chapters) */
+.tile{
+  position:relative;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-strong);
+  border:1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  cursor:pointer;
+  transition: transform var(--anim) ease, box-shadow var(--anim) ease, background var(--anim) ease;
+  overflow:hidden;
+}
+.tile:hover{ transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.tile:active{ transform: translateY(0); }
+.tile .tile-eyebrow{
+  font-family: system-ui, sans-serif;
+  font-size:.72rem; letter-spacing:.7px; text-transform:uppercase;
+  color:var(--teal-700); font-weight:700;
+}
+.tile .tile-title{
+  font-family:"Fraunces",serif; color:var(--teal-900);
+  font-size:1.35rem; margin:6px 0 4px; line-height:1.15;
+}
+.tile .tile-sub{ color:var(--muted); font-size:.85rem; font-family: system-ui, sans-serif; }
+.tile .tile-meta{
+  display:flex; gap:10px; flex-wrap:wrap;
+  margin-top: 12px;
+  font-family: system-ui, sans-serif;
+}
+.chip{
+  display:inline-flex; align-items:center; gap:6px;
+  padding: 4px 10px; border-radius: 999px;
+  background: var(--mint-200); color: var(--teal-900);
+  font-size:.72rem; font-weight:600; letter-spacing:.3px;
+}
+.chip.ok{ background: var(--success-soft); color: #065f46; }
+.chip.warn{ background: var(--warn-soft); color: #92400e; }
+.chip.err{ background: var(--danger-soft); color: #7f1d1d; }
+.chip.dark{ background: var(--ink-2); color: #ccfbf1; }
+
+/* Progress bar */
+.pbar{
+  height:8px; background: rgba(15,118,110,.12); border-radius:999px; overflow:hidden;
+  margin-top:10px;
+}
+.pbar > span{
+  display:block; height:100%;
+  background: linear-gradient(90deg, var(--teal-600), var(--teal-500));
+  border-radius:999px;
+  transition: width var(--anim) ease;
+}
+
+/* Home welcome */
+.hero{
+  display:grid; gap:18px; grid-template-columns: 1fr;
+  align-items:stretch;
+}
+@media(min-width:900px){ .hero{ grid-template-columns: 1.4fr 1fr; } }
+.hero .welcome{
+  padding: 22px;
+  background: linear-gradient(135deg, rgba(15,118,110,.92), rgba(45,212,191,.85)), url("https://kommodo.ai/i/YIOOUA4S9v59nDQRdPnN") center/cover no-repeat;
+  color:#e6fffb;
+  border-radius: var(--radius-lg);
+  border:1px solid rgba(255,255,255,.25);
+  box-shadow: var(--shadow-lg);
+  position:relative; overflow:hidden;
+}
+.hero .welcome::after{
+  content:""; position:absolute; inset:auto -40px -40px auto;
+  width:220px; height:220px;
+  background: radial-gradient(closest-side, rgba(255,255,255,.35), transparent 70%);
+  filter: blur(2px);
+}
+.hero .welcome h1{
+  font-family:"Fraunces",serif; font-weight:700;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  margin:6px 0 8px; line-height:1.05;
+}
+.hero .welcome p{ margin:0; opacity:.92; font-family: system-ui, sans-serif;}
+.hero .welcome .cta{ margin-top: 18px; display:flex; gap:10px; flex-wrap:wrap;}
+.hero .welcome .cta .btn.soft{ background: rgba(255,255,255,.9); color: var(--teal-900); }
+.hero .stats{
+  padding:18px; display:grid; gap:10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.stat{
+  padding:14px; border-radius:16px;
+  background: var(--glass-strong); border:1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  font-family: system-ui, sans-serif;
+}
+.stat .k{ font-size:.72rem; color:var(--muted); letter-spacing:.5px; text-transform:uppercase; font-weight:700; }
+.stat .v{ font-family:"Fraunces",serif; font-size:1.6rem; color:var(--teal-900); }
+
+/* Chapter card grid */
+.chapter-card{
+  padding:16px;
+  border-radius:20px;
+  background: var(--glass-strong);
+  border:1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  display:flex; flex-direction:column; gap:6px;
+  cursor:pointer;
+  transition: transform var(--anim) ease, box-shadow var(--anim) ease;
+  position:relative;
+}
+.chapter-card:hover{ transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.chapter-card .head{ display:flex; align-items:center; justify-content:space-between; }
+.chapter-card .num{ font-family:"Fraunces",serif; font-size:1.5rem; color:var(--teal-900); }
+.chapter-card .tick{ width:26px; height:26px; border-radius:999px; display:grid; place-items:center; background: rgba(15,118,110,.08); color: var(--muted); }
+.chapter-card.done .tick{ background: var(--success); color:#fff; }
+.chapter-card .stats-row{ display:flex; gap:6px; flex-wrap:wrap; font-family: system-ui, sans-serif; font-size:.75rem; color:var(--muted); }
+.chapter-card.empty{ opacity:.75; cursor:not-allowed; }
+.chapter-card.empty::after{
+  content:"Questions coming soon";
+  font-family: system-ui, sans-serif;
+  font-size:.7rem; letter-spacing:.5px; text-transform:uppercase;
+  color: var(--warn); font-weight:700;
+  margin-top:6px;
+}
+
+/* Quiz screen */
+.quiz-head{
+  display:grid; gap:12px;
+  grid-template-columns: 1fr;
+  margin-bottom:12px;
+}
+@media(min-width:700px){ .quiz-head{ grid-template-columns: 1.4fr 1fr; } }
+.qh-card{
+  padding:14px 16px; border-radius:18px; background:var(--glass-strong);
+  border:1px solid var(--line); box-shadow:var(--shadow-sm);
+  font-family: system-ui, sans-serif;
+}
+.qh-card .row{ display:flex; align-items:center; justify-content:space-between; gap:10px;}
+.qh-card .row + .row{ margin-top:8px; }
+.qh-card .label{ color:var(--muted); font-size:.75rem; letter-spacing:.4px; text-transform:uppercase; font-weight:700;}
+.qh-card .value{ color:var(--teal-900); font-weight:700; font-family:"Fraunces",serif; }
+.qh-score .value{ font-size:1.15rem; }
+
+.timer-pill{
+  display:inline-flex; align-items:center; gap:6px;
+  padding: 4px 12px; border-radius:999px;
+  background: var(--ink-2); color: var(--mint-200);
+  font-family: "Fraunces",serif; font-weight:700; font-size:1rem;
+  min-width:82px; justify-content:center;
+}
+.timer-pill.warn{ background:#7c2d12; color:#fed7aa; }
+.timer-pill.danger{ background:#7f1d1d; color:#fecaca; animation: pulse 800ms ease-in-out infinite;}
+@keyframes pulse{ 50%{ transform: scale(1.05); } }
+
+.qbox{
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-strong);
+  border:1px solid var(--line);
+  box-shadow: var(--shadow-md);
+}
+.q-text{
+  font-family:"Fraunces",serif;
+  font-size: clamp(1.05rem, 3.5vw, 1.35rem);
+  color: var(--teal-900);
+  line-height:1.35;
+  margin-bottom: 14px;
+}
+.options{ display:grid; gap:10px; }
+.opt{
+  --border: var(--line);
+  --bg: rgba(255,255,255,.85);
+  --fg: var(--ink);
+  display:flex; align-items:center; gap:12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  cursor:pointer;
+  transition: transform var(--anim) ease, background var(--anim) ease, border-color var(--anim) ease, box-shadow var(--anim) ease;
+  font-family: system-ui, sans-serif;
+  font-size: .98rem;
+  text-align:left;
+}
+.opt:hover{ background:#fff; border-color: var(--teal-600); }
+.opt .badge{
+  width:28px; height:28px; border-radius:999px; display:grid; place-items:center;
+  background: var(--mint-200); color: var(--teal-800);
+  font-weight:800; font-family:"Fraunces",serif;
+}
+.opt.correct{
+  --border: #10b981; --bg: #ecfdf5; --fg:#065f46;
+  animation: pop .3s ease;
+}
+.opt.correct .badge{ background: #10b981; color:white; }
+.opt.wrong{
+  --border: #ef4444; --bg: #fef2f2; --fg:#7f1d1d;
+  animation: shake .35s ease;
+}
+.opt.wrong .badge{ background:#ef4444; color:white; }
+.opt.locked{ cursor:not-allowed; }
+@keyframes pop{ 0%{transform:scale(.98);} 60%{transform:scale(1.02);} 100%{transform:scale(1);} }
+@keyframes shake{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-4px);} 75%{transform:translateX(4px);} }
+
+.explanation{
+  margin-top:14px; padding:14px; border-radius:14px;
+  background: var(--mint-100); border:1px dashed var(--teal-600);
+  color: var(--teal-900); font-family: system-ui, sans-serif;
+  display:none;
+}
+.explanation.show{ display:block; animation: fade .4s ease; }
+@keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
+.explanation strong{ color: var(--teal-800); }
+
+.q-actions{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; justify-content:space-between;}
+.q-actions .left, .q-actions .right{ display:flex; gap:8px; flex-wrap:wrap; }
+.q-bookmark{
+  appearance:none; border:0; background:transparent; cursor:pointer;
+  width:42px; height:42px; border-radius:12px; display:grid; place-items:center;
+  color: var(--muted);
+  transition: transform var(--anim) ease, color var(--anim) ease, background var(--anim) ease;
+}
+.q-bookmark:hover{ background: rgba(15,118,110,.08); }
+.q-bookmark.active{ color:#eab308; transform: scale(1.08); }
+
+/* Question navigator */
+.navigator{
+  display:grid; gap:8px;
+  grid-template-columns: repeat(6, minmax(0,1fr));
+  margin-top:16px;
+}
+@media(min-width:600px){ .navigator{ grid-template-columns: repeat(10, minmax(0,1fr));} }
+@media(min-width:900px){ .navigator{ grid-template-columns: repeat(14, minmax(0,1fr));} }
+.nav-cell{
+  aspect-ratio:1; display:grid; place-items:center;
+  border-radius: 10px; background: rgba(15,118,110,.10); color: var(--muted);
+  font-family: "Fraunces",serif; font-weight:700; font-size:.85rem;
+  cursor:pointer; border:1px solid transparent;
+  transition: transform var(--anim) ease, background var(--anim) ease;
+}
+.nav-cell:hover{ transform: scale(1.06); }
+.nav-cell.done{ background: #10b981; color:white; }
+.nav-cell.wrongly{ background:#ef4444; color:white; }
+.nav-cell.current{ border-color: var(--teal-700); background: rgba(20,149,139,.25); color: var(--teal-900); }
+
+/* Result */
+.result-hero{
+  text-align:center; padding: 28px 18px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(15,118,110,.92), rgba(45,212,191,.85));
+  color:#e6fffb; box-shadow: var(--shadow-lg);
+}
+.result-hero h1{ font-family:"Fraunces",serif; font-size: 2rem; margin:6px 0; }
+.result-ring{
+  --p:0;
+  width:160px; height:160px; border-radius:999px;
+  background: conic-gradient(#fff calc(var(--p)*1%), rgba(255,255,255,.25) 0);
+  display:grid; place-items:center;
+  margin: 12px auto;
+  box-shadow: inset 0 0 0 8px rgba(255,255,255,.15);
+}
+.result-ring > div{
+  width:130px; height:130px; border-radius:999px;
+  background: var(--teal-800); color:#fff;
+  display:grid; place-items:center;
+  font-family:"Fraunces",serif; font-size:2rem;
+}
+
+/* Statistics — CSS-only bars */
+.stat-grid{ display:grid; gap:12px; grid-template-columns: repeat(2, 1fr); }
+@media(min-width:640px){ .stat-grid{ grid-template-columns: repeat(4, 1fr); } }
+.stat-tile{
+  padding:14px; border-radius:16px;
+  background: var(--glass-strong); border:1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  font-family: system-ui, sans-serif;
+}
+.stat-tile .k{ font-size:.72rem; color:var(--muted); text-transform:uppercase; font-weight:700; letter-spacing:.5px; }
+.stat-tile .v{ font-family:"Fraunces",serif; font-size:1.5rem; color:var(--teal-900); }
+
+.bars{
+  display:flex; align-items:flex-end; gap:8px; height:180px; padding:12px;
+  background: rgba(15,118,110,.06); border-radius:16px;
+}
+.bar{
+  flex:1; background: linear-gradient(180deg, var(--teal-500), var(--teal-700));
+  border-radius: 8px 8px 4px 4px;
+  position:relative; min-height:6px;
+  transition: height var(--anim) ease;
+}
+.bar span{
+  position:absolute; bottom:-22px; left:50%; transform:translateX(-50%);
+  font-family: system-ui, sans-serif; font-size:.7rem; color:var(--muted);
+}
+.bar em{
+  position:absolute; top:-18px; left:50%; transform:translateX(-50%);
+  font-family: "Fraunces",serif; font-style:normal; font-size:.75rem; color:var(--teal-800);
+}
+
+/* Bottom nav — mobile */
+.botnav{
+  position: fixed; left:0; right:0; bottom: 0;
+  padding: 8px max(env(safe-area-inset-left),8px) max(env(safe-area-inset-bottom),8px);
+  display:grid; grid-template-columns: repeat(5, 1fr); gap:6px;
+  background: rgba(255,255,255,.75);
+  backdrop-filter: blur(var(--blur)); -webkit-backdrop-filter: blur(var(--blur));
+  border-top: 1px solid var(--line);
+  z-index: 30;
+}
+.botnav button{
+  appearance:none; border:0; background:transparent; cursor:pointer;
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+  padding: 6px 4px; border-radius: 12px;
+  color: var(--muted); font-family: system-ui, sans-serif; font-size:.7rem; font-weight:600;
+  transition: color var(--anim) ease, background var(--anim) ease;
+}
+.botnav button.active{ color: var(--teal-800); background: rgba(20,149,139,.10);}
+.botnav svg{ width:22px; height:22px; }
+@media(min-width:900px){ .botnav{ display:none; } .app{ padding-bottom: 40px; } }
+
+/* Modal / dialogs */
+.overlay{
+  position:fixed; inset:0; z-index:60;
+  background: rgba(11,31,30,.55);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  display:none; align-items:center; justify-content:center;
+  padding: 16px;
+}
+.overlay.show{ display:flex; animation: fade .25s ease; }
+.dialog{
+  width: 100%; max-width: 480px;
+  background: #fff; border-radius: 20px; box-shadow: var(--shadow-lg);
+  padding: 22px; border:1px solid var(--line);
+}
+.dialog h3{ font-family:"Fraunces",serif; color:var(--teal-900); margin: 0 0 8px;}
+.dialog p{ color:var(--muted); font-family: system-ui, sans-serif; margin:0 0 12px;}
+
+/* Toast */
+.toast{
+  position:fixed; left:50%; bottom: 92px; transform: translateX(-50%);
+  padding: 10px 16px; border-radius: 999px;
+  background: var(--ink-2); color:#ccfbf1;
+  font-family: system-ui, sans-serif; font-size:.9rem; box-shadow: var(--shadow-md);
+  z-index:80; opacity:0; pointer-events:none;
+  transition: opacity var(--anim) ease, transform var(--anim) ease;
+}
+.toast.show{ opacity:1; transform: translateX(-50%) translateY(-4px); }
+
+/* Search results list */
+.search-list{ display:grid; gap:8px; margin-top:10px; }
+.search-item{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding: 12px 14px; border-radius:14px;
+  background: var(--glass-strong); border:1px solid var(--line);
+  cursor:pointer;
+  transition: background var(--anim) ease, transform var(--anim) ease;
+  font-family: system-ui, sans-serif;
+}
+.search-item:hover{ background:#fff; transform: translateY(-1px); }
+.search-item .meta{ color:var(--muted); font-size:.8rem;}
+
+/* Settings rows */
+.settings-list{ display:grid; gap:10px; }
+.setting{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding: 14px; border-radius: 16px;
+  background: var(--glass-strong); border:1px solid var(--line);
+  font-family: system-ui, sans-serif;
+}
+.setting .k{ font-weight:600; color: var(--teal-900); }
+.setting .desc{ color: var(--muted); font-size:.8rem; margin-top:2px;}
+.setting .ctrl{ display:flex; align-items:center; gap:8px; }
+.switch{
+  --w:46px; --h:26px;
+  position:relative; width:var(--w); height:var(--h);
+  background: rgba(15,118,110,.18); border-radius:999px;
+  cursor:pointer; transition: background var(--anim) ease;
+}
+.switch::after{
+  content:""; position:absolute; top:3px; left:3px;
+  width: calc(var(--h) - 6px); height: calc(var(--h) - 6px);
+  border-radius:999px; background:#fff; box-shadow: var(--shadow-sm);
+  transition: transform var(--anim) ease;
+}
+.switch.on{ background: var(--teal-600); }
+.switch.on::after{ transform: translateX( calc(var(--w) - var(--h)) ); }
+.select-mini{
+  appearance:none; border:1px solid var(--line); background:#fff;
+  padding: 6px 30px 6px 10px; border-radius: 10px;
+  font-family: system-ui, sans-serif; font-size:.85rem; color: var(--teal-900);
+  background-image: linear-gradient(45deg,transparent 50%, var(--teal-700) 50%),
+                    linear-gradient(135deg,var(--teal-700) 50%, transparent 50%);
+  background-position: calc(100% - 16px) 50%, calc(100% - 10px) 50%;
+  background-size: 6px 6px; background-repeat: no-repeat;
+}
+
+/* Utility */
+.hidden{ display:none !important; }
+.center{ text-align:center; }
+.row{ display:flex; gap:10px; align-items:center; }
+.spread{ display:flex; justify-content:space-between; align-items:center; gap:10px;}
+.sub{ color: var(--muted); font-family: system-ui, sans-serif; font-size:.85rem; }
+.divider{ height:1px; background: var(--line); margin: 10px 0; }
+.small{ font-size:.78rem; font-family: system-ui, sans-serif; color: var(--muted); }
+
+/* Selection */
+::selection{ background: var(--teal-600); color:white; }
+</style>
+</head>
+<body>
+
+<!-- ================= APP ================= -->
+<div class="app" id="app">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="brand" data-testid="brand-logo" onclick="Nav.go('home')">
+      <div class="brand-logo">Q</div>
+      <div class="brand-name">Gyani Learners<small>General Knowledge · Offline</small></div>
+    </div>
+    <div class="top-spacer"></div>
+    <button class="icon-btn" title="Search" data-testid="top-search-btn" onclick="Nav.go('search')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </button>
+    <button class="icon-btn" title="Statistics" data-testid="top-stats-btn" onclick="Nav.go('stats')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="4" width="3" height="14"/></svg>
+    </button>
+    <button class="icon-btn" title="Settings" data-testid="top-settings-btn" onclick="Nav.go('settings')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.9 2.9l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.9-2.9l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.9-2.9l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.9 2.9l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+    </button>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="crumb" id="crumb" data-testid="breadcrumb"></div>
+
+  <!-- Page mount -->
+  <main id="page" role="main"></main>
+</div>
+
+<!-- Bottom nav -->
+<nav class="botnav" id="botnav" aria-label="Bottom navigation">
+  <button data-testid="botnav-home" data-nav="home" onclick="Nav.go('home')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg>
+    Home
+  </button>
+  <button data-testid="botnav-search" data-nav="search" onclick="Nav.go('search')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Search
+  </button>
+  <button data-testid="botnav-random" data-nav="random" onclick="Nav.go('random')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="M4 4l5 5"/></svg>
+    Random
+  </button>
+  <button data-testid="botnav-stats" data-nav="stats" onclick="Nav.go('stats')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="4" width="3" height="14"/></svg>
+    Stats
+  </button>
+  <button data-testid="botnav-settings" data-nav="settings" onclick="Nav.go('settings')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.9 2.9l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.9-2.9l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.9-2.9l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.9 2.9l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+    Settings
+  </button>
+</nav>
+
+<!-- Overlay dialog -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true">
+  <div class="dialog" id="dialog"></div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/*==========================
+  CONFIG
+==========================*/
+/**
+ * Change this to swap the whole app background.
+ * Just drop a "background.jpg" next to index.html or update the value.
+ */
+const BACKGROUND_IMAGE = "background.jpg";
+
+/**
+ * Syllabus definition — everything is generated from here.
+ * Adding a new class/subject/chapter here will automatically appear
+ * in the UI without any hardcoding.
+ */
+const syllabus = {
+  6:{ history:12, polity:9,  geography:8,  science:16 },
+  7:{ history:10, polity:9,  geography:10, science:18 },
+  8:{ history:10, polity:10, geography:6,  science:18 },
+  9:{ history:5,  polity:5,  economics:4,  geography:6,  science:15 },
+  10:{ history:5, polity:8,  economics:5,  geography:7,  science:16 }
+};
+
+/**
+ * Central CONFIG object. Everything is driven from here.
+ */
+const CONFIG = {
+  background: BACKGROUND_IMAGE,
+  syllabus,
+  settings:{
+    shuffleQuestions:false,
+    shuffleOptions:false,
+    timerMode:"none",     // none | 10 | 20 | 30 | custom
+    timerCustom:15,       // minutes when timerMode === 'custom'
+    blur:"med",           // off | low | med | high
+    animSpeed:"normal",   // off | fast | normal | slow
+    fontSize:"md"         // sm | md | lg | xl
+  }
+};
+
+/*==========================
+  DATA — QUESTION BANK
+==========================*/
+/**
+ * questionBank is auto-generated from syllabus.
+ * Structure: questionBank[class][subject][chapterKey] = []  (array of {question, answers, explanation})
+ * Chapter keys are "chapter1", "chapter2", ...
+ * Every question uses the format:
+ *   { question:"14. Question", answers:[{text:"(a)...",correct:false}, ...], explanation:"..." }
+ */
+const questionBank = {};
+(function buildEmptyBank(){
+  for (const cls in syllabus){
+    questionBank[cls] = {};
+    for (const subj in syllabus[cls]){
+      questionBank[cls][subj] = {};
+      const total = syllabus[cls][subj];
+      for (let i=1; i<=total; i++){
+        questionBank[cls][subj]["chapter"+i] = []; // Placeholder — paste your questions here
+      }
+    }
+  }
+})();
+
+/* ---- SAMPLE SEED QUESTIONS (for immediate testing) ---- */
+/* ---- LOAD MULTIPLE JSON FILES DYNAMICALLY ---- */
+async function loadAllChapters() {
+  try {
+    const fetchPromises = [];
+
+    // Loop through your syllabus configuration to build file paths automatically
+    for (const cls in syllabus) {
+      for (const subj in syllabus[cls]) {
+        const totalChapters = syllabus[cls][subj];
+        for (let i = 1; i <= totalChapters; i++) {
+          
+          // Construct filename dynamically, e.g., "class-6-history-chapter1.json"
+          const fileName = `class-${cls}-${subj}-chapter${i}.json`;
+
+          // Push the fetch promise into an array
+          const request = fetch(fileName)
+            .then(response => {
+              if (!response.ok) throw new Error(`Missing file: ${fileName}`);
+              return response.json();
+            })
+            .then(data => {
+              // Populate the specific slot in your questionBank structure
+              questionBank[cls][subj][`chapter${i}`] = data;
+            })
+            .catch(err => {
+              // Gracefully handle missing/uncreated chapter files without breaking the whole app
+              console.warn(`Could not load ${fileName}:`, err.message);
+            });
+
+          fetchPromises.push(request);
+        }
+      }
+    }
+
+    // Wait for all fetch requests to complete
+    await Promise.all(fetchPromises);
+    console.log("All available question bank files loaded successfully!", questionBank);
+
+    // Call your UI initialization function here once data is ready
+    // e.g., initQuizApp();
+
+  } catch (error) {
+    console.error("Error loading question banks:", error);
+  }
+}
+
+// Execute the loader
+loadAllChapters();
+
+/*==========================
+  STATE
+==========================*/
+/**
+ * Runtime state; per-user (mobile number) data lives in localStorage.
+ */
+const State = {
+  mobile: null,                // currently logged-in mobile number
+  route: "home",               // current view name
+  breadcrumb: [],              // for the top breadcrumb
+  quiz: null,                  // active quiz object
+  timerTick: null,             // interval id
+  toastTimer: null
+};
+
+/*==========================
+  LOCAL STORAGE
+==========================*/
+/**
+ * Storage keys are namespaced per mobile so multiple users can
+ * share the same device without collisions.
+ *   Gyani Learners::<mobile>::progress
+ *   Gyani Learners::<mobile>::bookmarks
+ *   Gyani Learners::<mobile>::wrong
+ *   Gyani Learners::<mobile>::settings
+ *   Gyani Learners::<mobile>::resume
+ *   Gyani Learners::mobile   (last logged in)
+ */
+const Store = {
+  key(kind){ return `Gyani Learners::${State.mobile}::${kind}`; },
+  loadMobile(){ return localStorage.getItem("Gyani Learners::mobile"); },
+  saveMobile(m){ localStorage.setItem("Gyani Learners::mobile", m); },
+  clearMobile(){ localStorage.removeItem("Gyani Learners::mobile"); },
+
+  getJSON(k, fb){
+    try{ const raw = localStorage.getItem(k); return raw ? JSON.parse(raw) : fb; }
+    catch(e){ return fb; }
+  },
+  setJSON(k, v){ localStorage.setItem(k, JSON.stringify(v)); },
+
+  progress(){ return this.getJSON(this.key("progress"), {}); },
+  saveProgress(p){ this.setJSON(this.key("progress"), p); },
+  bookmarks(){ return this.getJSON(this.key("bookmarks"), []); },
+  saveBookmarks(b){ this.setJSON(this.key("bookmarks"), b); },
+  wrong(){ return this.getJSON(this.key("wrong"), []); },
+  saveWrong(w){ this.setJSON(this.key("wrong"), w); },
+  settings(){ return this.getJSON(this.key("settings"), CONFIG.settings); },
+  saveSettings(s){ this.setJSON(this.key("settings"), s); },
+  resume(){ return this.getJSON(this.key("resume"), null); },
+  saveResume(r){ this.setJSON(this.key("resume"), r); },
+  clearResume(){ localStorage.removeItem(this.key("resume")); },
+
+  /** Aggregate everything for export/reset */
+  exportAll(){
+    return {
+      mobile: State.mobile,
+      progress: this.progress(),
+      bookmarks: this.bookmarks(),
+      wrong: this.wrong(),
+      settings: this.settings(),
+      exportedAt: new Date().toISOString()
+    };
+  },
+  importAll(obj){
+    if (!obj || typeof obj !== "object") throw new Error("Invalid JSON");
+    if (obj.progress) this.saveProgress(obj.progress);
+    if (obj.bookmarks) this.saveBookmarks(obj.bookmarks);
+    if (obj.wrong) this.saveWrong(obj.wrong);
+    if (obj.settings) this.saveSettings(obj.settings);
+  },
+  resetAll(){
+    localStorage.removeItem(this.key("progress"));
+    localStorage.removeItem(this.key("bookmarks"));
+    localStorage.removeItem(this.key("wrong"));
+    localStorage.removeItem(this.key("resume"));
+  }
+};
+
+/*==========================
+  LOGIN
+==========================*/
+const Login = {
+  render(){
+    return `
+      <section class="card solid" style="max-width:460px; margin: 20px auto;">
+        <div class="center">
+          <div class="brand-logo" style="width:56px;height:56px;font-size:26px;margin:0 auto 10px;">Q</div>
+          <h2 style="font-family:'Fraunces',serif; color:var(--teal-900); margin:0 0 6px;">Welcome to Gyani Learners</h2>
+          <p class="sub" style="margin:0 0 18px;">Sign in with your mobile number to save your progress on this device.</p>
+        </div>
+        <div class="field">
+          <label for="loginMobile">Mobile Number (10 digits)</label>
+          <input id="loginMobile" data-testid="login-mobile-input" inputmode="numeric" maxlength="10" pattern="\\d{10}" placeholder="9876543210"/>
+          <div class="small" id="loginErr" style="color:var(--danger); min-height:16px;"></div>
+        </div>
+        <button class="btn block" data-testid="login-submit-btn" onclick="Login.submit()">
+          Continue
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+        <div class="small center" style="margin-top:14px;">No password. No OTP. 100% offline.</div>
+      </section>
+    `;
+  },
+  attach(){
+    const input = document.getElementById("loginMobile");
+    input.addEventListener("input", e=>{
+      e.target.value = e.target.value.replace(/\D/g,"").slice(0,10);
+    });
+    input.addEventListener("keydown", e=>{ if (e.key === "Enter") Login.submit(); });
+    input.focus();
+  },
+  submit(){
+    const val = (document.getElementById("loginMobile").value || "").trim();
+    const err = document.getElementById("loginErr");
+    if (!/^\d{10}$/.test(val)){
+      err.textContent = "Please enter a valid 10-digit mobile number.";
+      return;
+    }
+    err.textContent = "";
+    State.mobile = val;
+    Store.saveMobile(val);
+    Settings.applyAll(Store.settings());
+    toast("Signed in successfully");
+    Nav.go("home");
+  },
+  logout(){
+    Store.clearMobile();
+    State.mobile = null;
+    Nav.go("login");
+  }
+};
+
+/*==========================
+  NAVIGATION
+==========================*/
+const Nav = {
+  routes: {},
+  register(name, fn){ this.routes[name] = fn; },
+  go(name, params){
+    if (!State.mobile && name !== "login"){ name = "login"; }
+    State.route = name;
+    const el = document.getElementById("page");
+    const fn = this.routes[name] || this.routes["home"];
+    el.innerHTML = fn(params||{});
+    // update crumb + botnav highlight
+    Nav.updateCrumb();
+    Nav.updateBotnav();
+    // attach handlers for the current view if provided
+    const attach = this.routes[name+":attach"];
+    if (attach) attach(params||{});
+    window.scrollTo({top:0, behavior:"smooth"});
+  },
+  setCrumb(items){ State.breadcrumb = items; Nav.updateCrumb(); },
+  updateCrumb(){
+    const el = document.getElementById("crumb");
+    if (!el) return;
+    if (State.route === "login" || !State.breadcrumb.length){ el.innerHTML = ""; return; }
+    el.innerHTML = State.breadcrumb.map((c,i)=>{
+      const isLast = i === State.breadcrumb.length-1;
+      if (isLast) return `<span style="color:var(--teal-900); font-weight:600;">${escapeHTML(c.label)}</span>`;
+      return `<a onclick="Nav.go('${c.to}', ${JSON.stringify(c.params||{}).replace(/"/g,'&quot;')})">${escapeHTML(c.label)}</a><span class="sep">›</span>`;
+    }).join("");
+  },
+  updateBotnav(){
+    document.querySelectorAll(".botnav button").forEach(b=>{
+      b.classList.toggle("active", b.dataset.nav === State.route);
+    });
+  }
+};
+
+/*==========================
+  HOME
+==========================*/
+const Home = {
+  render(){
+    Nav.setCrumb([]);
+    const stats = Statistics.summary();
+    const classCards = Object.keys(CONFIG.syllabus).map(cls=>{
+      const subjectCount = Object.keys(CONFIG.syllabus[cls]).length;
+      const total = totalChaptersInClass(cls);
+      const done = completedChaptersInClass(cls);
+      const pct = total ? Math.round(done/total*100) : 0;
+      return `
+        <div class="tile" data-testid="class-card-${cls}" onclick="Nav.go('class', {cls:'${cls}'})">
+          <div class="tile-eyebrow">Grade</div>
+          <div class="tile-title">Class ${cls}</div>
+          <div class="tile-sub">${subjectCount} subjects · ${total} chapters</div>
+          <div class="pbar"><span style="width:${pct}%"></span></div>
+          <div class="tile-meta"><span class="chip">${done}/${total} done</span><span class="chip ok">${pct}%</span></div>
+        </div>
+      `;
+    }).join("");
+
+    const resume = Store.resume();
+    const resumeBlock = resume ? `
+      <div class="card solid" style="margin-bottom:14px; border-left: 4px solid var(--teal-600);">
+        <div class="spread">
+          <div>
+            <div class="small" style="text-transform:uppercase; letter-spacing:.4px; font-weight:700; color:var(--teal-700);">Resume last quiz</div>
+            <div style="font-family:'Fraunces',serif; font-size:1.1rem; color:var(--teal-900);">Class ${resume.cls} · ${cap(resume.subj)} · Chapter ${resume.chapterNum||"—"}</div>
+            <div class="small">${resume.mode==="chapter"?"Chapter":"Custom"} · ${resume.answered||0}/${resume.total||0} answered</div>
+          </div>
+          <div class="row">
+            <button class="btn" data-testid="resume-btn" onclick="Quiz.resume()">Resume</button>
+            <button class="btn ghost" onclick="Store.clearResume(); Nav.go('home');">Discard</button>
+          </div>
+        </div>
+      </div>
+    ` : "";
+
+    return `
+      ${resumeBlock}
+      <section class="hero">
+        <div class="welcome">
+          <div class="small" style="opacity:.9; text-transform:uppercase; letter-spacing:.5px;">Signed in as ${State.mobile}</div>
+          <h1>Learn a little every day.</h1>
+          <p>Practice by class &amp; chapter, run timed quizzes, save bookmarks and review your wrong answers — all offline.</p>
+          <div class="cta">
+            <button class="btn soft" data-testid="home-cta-random" onclick="Nav.go('random')">Random Practice</button>
+            <button class="btn ghost" style="background:rgba(255,255,255,.15); color:#e6fffb; border-color:rgba(255,255,255,.35);" data-testid="home-cta-bookmarks" onclick="Nav.go('bookmarks')">Bookmarks</button>
+            <button class="btn ghost" style="background:rgba(255,255,255,.15); color:#e6fffb; border-color:rgba(255,255,255,.35);" data-testid="home-cta-wrong" onclick="Nav.go('wrongpractice')">Wrong Questions</button>
+          </div>
+        </div>
+        <div class="card stats">
+          <div class="stat"><div class="k">Attempted</div><div class="v">${stats.attempted}</div></div>
+          <div class="stat"><div class="k">Accuracy</div><div class="v">${stats.accuracy}%</div></div>
+          <div class="stat"><div class="k">Chapters Done</div><div class="v">${stats.chaptersDone}/${stats.chaptersTotal}</div></div>
+          <div class="stat"><div class="k">Bookmarks</div><div class="v">${stats.bookmarks}</div></div>
+        </div>
+      </section>
+
+      <div class="section-title">
+        <h2>Choose a class</h2>
+        <span class="hint">Tap to explore subjects</span>
+      </div>
+      <div class="grid cols-4" data-testid="class-grid">
+        ${classCards}
+      </div>
+
+      <div class="section-title" style="margin-top:26px;">
+        <h2>Quick actions</h2>
+      </div>
+      <div class="grid cols-3">
+        <div class="tile" data-testid="quick-search" onclick="Nav.go('search')">
+          <div class="tile-eyebrow">Find</div>
+          <div class="tile-title">Search</div>
+          <div class="tile-sub">Search by class, subject or chapter.</div>
+        </div>
+        <div class="tile" data-testid="quick-random" onclick="Nav.go('random')">
+          <div class="tile-eyebrow">Mix</div>
+          <div class="tile-title">Random Practice</div>
+          <div class="tile-sub">Pick 10 / 20 / 50 / custom questions from anywhere.</div>
+        </div>
+        <div class="tile" data-testid="quick-stats" onclick="Nav.go('stats')">
+          <div class="tile-eyebrow">Track</div>
+          <div class="tile-title">Statistics</div>
+          <div class="tile-sub">See your progress, accuracy and streaks.</div>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top:26px;">
+        <h2>Account</h2>
+      </div>
+      <div class="grid cols-3">
+        <div class="tile" onclick="Nav.go('settings')">
+          <div class="tile-eyebrow">Preferences</div>
+          <div class="tile-title">Settings</div>
+          <div class="tile-sub">Shuffle, timer, blur, font size, export/import.</div>
+        </div>
+        <div class="tile" onclick="Login.logout()">
+          <div class="tile-eyebrow">Session</div>
+          <div class="tile-title">Sign out</div>
+          <div class="tile-sub">Switch to a different mobile number.</div>
+        </div>
+      </div>
+    `;
+  }
+};
+
+/*==========================
+  CLASS → SUBJECT → CHAPTER
+==========================*/
+const ClassView = {
+  render({cls}){
+    Nav.setCrumb([{label:"Home", to:"home"}, {label:"Class "+cls}]);
+    const subjects = Object.keys(CONFIG.syllabus[cls]||{});
+    const cards = subjects.map(subj=>{
+      const total = CONFIG.syllabus[cls][subj];
+      const done = completedChaptersInSubject(cls, subj);
+      const pct = total ? Math.round(done/total*100) : 0;
+      return `
+        <div class="tile" data-testid="subject-card-${cls}-${subj}" onclick="Nav.go('subject', {cls:'${cls}', subj:'${subj}'})">
+          <div class="tile-eyebrow">Subject</div>
+          <div class="tile-title">${cap(subj)}</div>
+          <div class="tile-sub">${total} chapters</div>
+          <div class="pbar"><span style="width:${pct}%"></span></div>
+          <div class="tile-meta">
+            <span class="chip">${done}/${total} done</span>
+            <span class="chip ok">${pct}%</span>
+          </div>
+        </div>`;
+    }).join("");
+    return `
+      <div class="section-title"><h2>Class ${cls} · Subjects</h2></div>
+      <div class="grid cols-3">${cards}</div>
+    `;
+  }
+};
+
+const SubjectView = {
+  render({cls, subj}){
+    Nav.setCrumb([
+      {label:"Home", to:"home"},
+      {label:"Class "+cls, to:"class", params:{cls}},
+      {label:cap(subj)}
+    ]);
+    const total = CONFIG.syllabus[cls][subj];
+    const progress = Store.progress();
+    const key = k=> `${cls}::${subj}::chapter${k}`;
+    const cards = [];
+    for (let i=1; i<=total; i++){
+      const chapterKey = "chapter"+i;
+      const bank = (questionBank[cls][subj][chapterKey] || []);
+      const chStat = progress[key(i)] || null;
+      const attempts = chStat?.attempts || 0;
+      const highest = chStat?.highest || 0;
+      const pct = chStat?.pct || 0;
+      const done = pct >= 100;
+      const isEmpty = bank.length === 0;
+      cards.push(`
+        <div class="chapter-card ${done?'done':''} ${isEmpty?'empty':''}" data-testid="chapter-card-${cls}-${subj}-${i}"
+             onclick="${isEmpty?'':`Quiz.start({cls:'${cls}', subj:'${subj}', chapterNum:${i}})`}">
+          <div class="head">
+            <div class="num">Chapter ${i}</div>
+            <div class="tick">
+              ${done ? `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>` : `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.6c.6.5 1 1.2 1 2V16h6v-1.4c0-.8.4-1.5 1-2A7 7 0 0 0 12 2Z"/></svg>`}
+            </div>
+          </div>
+          <div class="stats-row">
+            <span class="chip ${pct>=100?'ok':pct>0?'':'warn'}">${pct}%</span>
+            <span class="chip">${bank.length} Qs</span>
+            <span class="chip">${attempts} attempts</span>
+            <span class="chip">Best ${highest}%</span>
+          </div>
+        </div>
+      `);
+    }
+    return `
+      <div class="section-title"><h2>${cap(subj)} — Class ${cls}</h2><span class="hint">${total} chapters</span></div>
+      <div class="grid cols-4">${cards.join("")}</div>
+    `;
+  }
+};
+
+/*==========================
+  SEARCH
+==========================*/
+const Search = {
+  render(){
+    Nav.setCrumb([{label:"Home", to:"home"}, {label:"Search"}]);
+    return `
+      <div class="section-title"><h2>Search</h2><span class="hint">Class · Subject · Chapter</span></div>
+      <div class="card solid">
+        <div class="field">
+          <label>Type to filter</label>
+          <input id="searchInput" data-testid="search-input" placeholder="e.g. class 8, geography, chapter 3"/>
+        </div>
+        <div class="search-list" id="searchList" data-testid="search-results"></div>
+      </div>
+    `;
+  },
+  attach(){
+    const inp = document.getElementById("searchInput");
+    inp.addEventListener("input", ()=> Search.filter(inp.value));
+    Search.filter("");
+    inp.focus();
+  },
+  filter(q){
+    q = (q||"").toLowerCase().trim();
+    const items = [];
+    for (const cls in CONFIG.syllabus){
+      for (const subj in CONFIG.syllabus[cls]){
+        const total = CONFIG.syllabus[cls][subj];
+        for (let i=1;i<=total;i++){
+          const label = `Class ${cls} · ${cap(subj)} · Chapter ${i}`;
+          const key = label.toLowerCase();
+          if (!q || key.includes(q) || `class${cls}`.includes(q.replace(/\s+/,"")) ){
+            items.push({cls, subj, i, label});
+          }
+        }
+      }
+    }
+    const el = document.getElementById("searchList");
+    if (!items.length){ el.innerHTML = `<div class="sub center" style="padding:14px;">No results</div>`; return; }
+    el.innerHTML = items.slice(0,200).map(it=>{
+      const bank = questionBank[it.cls][it.subj]["chapter"+it.i];
+      const chip = bank.length ? `<span class="chip ok">${bank.length} Qs</span>` : `<span class="chip warn">Coming soon</span>`;
+      return `
+        <div class="search-item" data-testid="search-item-${it.cls}-${it.subj}-${it.i}" onclick="${bank.length?`Quiz.start({cls:'${it.cls}', subj:'${it.subj}', chapterNum:${it.i}})`:`toast('Questions coming soon')`}">
+          <div>
+            <div style="color:var(--teal-900); font-weight:600;">${it.label}</div>
+            <div class="meta">Grade ${it.cls}</div>
+          </div>
+          ${chip}
+        </div>`;
+    }).join("");
+  }
+};
+
+/*==========================
+  SETTINGS
+==========================*/
+const Settings = {
+  render(){
+    Nav.setCrumb([{label:"Home", to:"home"}, {label:"Settings"}]);
+    const s = Store.settings();
+    return `
+      <div class="section-title"><h2>Settings</h2><span class="hint">Personalise your experience</span></div>
+      <div class="settings-list">
+        ${this.rowSwitch("shuffleQuestions", "Shuffle Questions", "Randomise order every attempt.", s.shuffleQuestions)}
+        ${this.rowSwitch("shuffleOptions", "Shuffle Options", "Randomise A/B/C/D on each question.", s.shuffleOptions)}
+
+        <div class="setting">
+          <div><div class="k">Timer</div><div class="desc">Auto-submit when time runs out.</div></div>
+          <div class="ctrl">
+            <select class="select-mini" data-testid="setting-timer" onchange="Settings.set('timerMode', this.value)">
+              ${["none","10","20","30","custom"].map(v=>`<option value="${v}" ${s.timerMode===v?"selected":""}>${v==="none"?"Off":v==="custom"?"Custom":v+" min"}</option>`).join("")}
+            </select>
+            <input type="number" min="1" max="180" value="${s.timerCustom}" style="width:70px;padding:6px 8px;border-radius:10px;border:1px solid var(--line);font-family:system-ui;" onchange="Settings.set('timerCustom', Math.max(1, parseInt(this.value)||1))" ${s.timerMode==="custom"?"":"disabled"}/>
+          </div>
+        </div>
+
+        <div class="setting">
+          <div><div class="k">Background Blur</div><div class="desc">Glass frosting strength.</div></div>
+          <div class="ctrl">
+            <select class="select-mini" data-testid="setting-blur" onchange="Settings.set('blur', this.value)">
+              ${["off","low","med","high"].map(v=>`<option value="${v}" ${s.blur===v?"selected":""}>${cap(v)}</option>`).join("")}
+            </select>
+          </div>
+        </div>
+
+        <div class="setting">
+          <div><div class="k">Animation Speed</div><div class="desc">Control transition speed.</div></div>
+          <div class="ctrl">
+            <select class="select-mini" data-testid="setting-anim" onchange="Settings.set('animSpeed', this.value)">
+              ${["off","fast","normal","slow"].map(v=>`<option value="${v}" ${s.animSpeed===v?"selected":""}>${cap(v)}</option>`).join("")}
+            </select>
+          </div>
+        </div>
+
+        <div class="setting">
+          <div><div class="k">Font Size</div><div class="desc">Improve readability.</div></div>
+          <div class="ctrl">
+            <select class="select-mini" data-testid="setting-fs" onchange="Settings.set('fontSize', this.value)">
+              ${[["sm","Small"],["md","Medium"],["lg","Large"],["xl","Extra Large"]].map(([v,l])=>`<option value="${v}" ${s.fontSize===v?"selected":""}>${l}</option>`).join("")}
+            </select>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="setting">
+          <div><div class="k">Export Progress</div><div class="desc">Download a JSON backup.</div></div>
+          <div class="ctrl"><button class="btn soft" data-testid="settings-export" onclick="Settings.exportJSON()">Export</button></div>
+        </div>
+        <div class="setting">
+          <div><div class="k">Import Progress</div><div class="desc">Restore from a JSON backup.</div></div>
+          <div class="ctrl"><label class="btn soft" style="cursor:pointer;">Import<input type="file" accept="application/json" style="display:none" data-testid="settings-import" onchange="Settings.importJSON(event)"/></label></div>
+        </div>
+        <div class="setting">
+          <div><div class="k">Reset Progress</div><div class="desc">Erase everything for ${State.mobile}. Cannot be undone.</div></div>
+          <div class="ctrl"><button class="btn danger" data-testid="settings-reset" onclick="Settings.reset()">Reset</button></div>
+        </div>
+
+        <div class="setting">
+          <div><div class="k">Signed in as</div><div class="desc">${State.mobile}</div></div>
+          <div class="ctrl"><button class="btn ghost" onclick="Login.logout()">Sign out</button></div>
+        </div>
+      </div>
+    `;
+  },
+  rowSwitch(key, title, desc, on){
+    return `
+      <div class="setting">
+        <div><div class="k">${title}</div><div class="desc">${desc}</div></div>
+        <div class="ctrl">
+          <div class="switch ${on?'on':''}" data-testid="setting-${key}" onclick="Settings.toggle('${key}', this)"></div>
+        </div>
+      </div>
+    `;
+  },
+  toggle(key, el){
+    const s = Store.settings();
+    s[key] = !s[key];
+    Store.saveSettings(s);
+    el.classList.toggle("on", s[key]);
+    Settings.applyAll(s);
+  },
+  set(key, value){
+    const s = Store.settings();
+    s[key] = value;
+    Store.saveSettings(s);
+    Settings.applyAll(s);
+    if (State.route === "settings") Nav.go("settings");
+  },
+  applyAll(s){
+    const root = document.documentElement;
+    root.setAttribute("data-fs", s.fontSize||"md");
+    root.setAttribute("data-anim", s.animSpeed||"normal");
+    root.setAttribute("data-blur", s.blur||"med");
+  },
+  exportJSON(){
+    const data = Store.exportAll();
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type:"application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = `Gyani Learners-${State.mobile}.json`;
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    toast("Progress exported");
+  },
+  importJSON(e){
+    const f = e.target.files?.[0]; if (!f) return;
+    const reader = new FileReader();
+    reader.onload = ()=>{
+      try{
+        const obj = JSON.parse(reader.result);
+        Store.importAll(obj);
+        Settings.applyAll(Store.settings());
+        toast("Progress imported");
+        Nav.go("home");
+      }catch(err){ toast("Invalid JSON file"); }
+    };
+    reader.readAsText(f);
+  },
+  reset(){
+    confirmDialog("Reset all progress?", `This will erase progress, bookmarks and wrong questions for ${State.mobile}.`, ()=>{
+      Store.resetAll();
+      toast("Progress reset");
+      Nav.go("home");
+    });
+  }
+};
+
+/*==========================
+  STATISTICS
+==========================*/
+const Statistics = {
+  summary(){
+    const p = Store.progress();
+    let attempted=0, correct=0, wrong=0, chaptersDone=0, chaptersTotal=0;
+    let bestSum=0, bestCount=0, avgTimeSum=0, avgTimeCount=0, highest=0;
+    for (const cls in CONFIG.syllabus){
+      for (const subj in CONFIG.syllabus[cls]){
+        const total = CONFIG.syllabus[cls][subj];
+        for (let i=1;i<=total;i++){
+          chaptersTotal++;
+          const rec = p[`${cls}::${subj}::chapter${i}`];
+          if (rec){
+            attempted += rec.attempted || 0;
+            correct += rec.correct || 0;
+            wrong += rec.wrong || 0;
+            if (rec.pct >= 100) chaptersDone++;
+            if (typeof rec.highest === "number"){ bestSum += rec.highest; bestCount++; highest = Math.max(highest, rec.highest); }
+            if (typeof rec.avgTime === "number" && rec.avgTime>0){ avgTimeSum += rec.avgTime; avgTimeCount++; }
+          }
+        }
+      }
+    }
+    return {
+      attempted, correct, wrong,
+      accuracy: attempted ? Math.round(correct/attempted*100) : 0,
+      chaptersDone, chaptersTotal,
+      progressPct: chaptersTotal ? Math.round(chaptersDone/chaptersTotal*100) : 0,
+      averageScore: bestCount ? Math.round(bestSum/bestCount) : 0,
+      highestScore: highest,
+      averageTime: avgTimeCount ? Math.round(avgTimeSum/avgTimeCount) : 0,
+      bookmarks: Store.bookmarks().length,
+      wrongCount: Store.wrong().length
+    };
+  },
+  render(){
+    Nav.setCrumb([{label:"Home", to:"home"}, {label:"Statistics"}]);
+    const s = Statistics.summary();
+    // Bar chart: accuracy per subject (aggregated across classes)
+    const subjTotals = {};
+    const p = Store.progress();
+    for (const cls in CONFIG.syllabus){
+      for (const subj in CONFIG.syllabus[cls]){
+        const total = CONFIG.syllabus[cls][subj];
+        for (let i=1;i<=total;i++){
+          const rec = p[`${cls}::${subj}::chapter${i}`];
+          if (!rec) continue;
+          subjTotals[subj] = subjTotals[subj] || {a:0,c:0};
+          subjTotals[subj].a += rec.attempted||0;
+          subjTotals[subj].c += rec.correct||0;
+        }
+      }
+    }
+    const subjKeys = Object.keys(subjTotals);
+    const bars = subjKeys.length ? subjKeys.map(k=>{
+      const acc = subjTotals[k].a ? Math.round(subjTotals[k].c/subjTotals[k].a*100) : 0;
+      return `<div class="bar" style="height:${Math.max(6, acc*1.6)}px"><em>${acc}%</em><span>${cap(k).slice(0,4)}</span></div>`;
+    }).join("") : `<div class="sub" style="margin:auto;">No data yet — take a quiz!</div>`;
+
+    return `
+      <div class="section-title"><h2>Statistics</h2><span class="hint">Your overall performance</span></div>
+      <div class="stat-grid">
+        <div class="stat-tile"><div class="k">Attempted</div><div class="v" data-testid="stat-attempted">${s.attempted}</div></div>
+        <div class="stat-tile"><div class="k">Correct</div><div class="v" style="color:var(--success)">${s.correct}</div></div>
+        <div class="stat-tile"><div class="k">Wrong</div><div class="v" style="color:var(--danger)">${s.wrong}</div></div>
+        <div class="stat-tile"><div class="k">Accuracy</div><div class="v">${s.accuracy}%</div></div>
+        <div class="stat-tile"><div class="k">Chapters</div><div class="v">${s.chaptersDone}/${s.chaptersTotal}</div></div>
+        <div class="stat-tile"><div class="k">Progress</div><div class="v">${s.progressPct}%</div></div>
+        <div class="stat-tile"><div class="k">Avg Score</div><div class="v">${s.averageScore}%</div></div>
+        <div class="stat-tile"><div class="k">Best Score</div><div class="v">${s.highestScore}%</div></div>
+        <div class="stat-tile"><div class="k">Avg Time / Q</div><div class="v">${s.averageTime}s</div></div>
+        <div class="stat-tile"><div class="k">Bookmarks</div><div class="v">${s.bookmarks}</div></div>
+        <div class="stat-tile"><div class="k">Wrong Bank</div><div class="v">${s.wrongCount}</div></div>
+        <div class="stat-tile"><div class="k">Signed in</div><div class="v" style="font-size:1rem;">${State.mobile}</div></div>
+      </div>
+
+      <div class="section-title"><h2>Accuracy by subject</h2></div>
+      <div class="bars" style="padding: 24px 12px;">${bars}</div>
+    `;
+  }
+};
+
+/*==========================
+  RANDOM PRACTICE
+==========================*/
+const Random = {
+  render(){
+    Nav.setCrumb([{label:"Home", to:"home"}, {label:"Random Practice"}]);
+    return `
+      <div class="section-title"><h2>Random Practice</h2><span class="hint">Mix &amp; match any questions</span></div>
+      <div class="card solid">
+        <div class="grid cols-2">
+          <div class="field">
+            <label>Mode</label>
+            <select id="rMode" data-testid="random-mode">
+              <option value="all">Entire Database</option>
+              <option value="class">Current Class</option>
+              <option value="subject">Current Subject</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Count</label>
+            <select id="rCount" data-testid="random-count">
+              ${[10,20,30,50,100].map(n=>`<option value="${n}">${n} questions</option>`).join("")}
+              <option value="all">All Questions</option>
+              <option value="custom">Custom…</option>
+            </select>
+          </div>
+          <div class="field" id="classWrap">
+            <label>Class</label>
+            <select id="rClass">${Object.keys(CONFIG.syllabus).map(c=>`<option value="${c}">Class ${c}</option>`).join("")}</select>
+          </div>
+          <div class="field" id="subjWrap">
+            <label>Subject</label>
+            <select id="rSubj"></select>
+          </div>
+          <div class="field" id="customWrap" style="display:none;">
+            <label>Custom count</label>
+            <input type="number" min="1" max="10000" id="rCustom" value="15"/>
+          </div>
+        </div>
+        <div class="row" style="margin-top:14px; gap:8px; flex-wrap:wrap;">
+          <button class="btn" data-testid="random-start" onclick="Random.start()">Start Random Quiz</button>
+          <button class="btn ghost" onclick="Nav.go('home')">Cancel</button>
+        </div>
+        <div class="small" id="rHint" style="margin-top:8px;"></div>
+      </div>
+    `;
+  },
+  attach(){
+    const modeEl = document.getElementById("rMode");
+    const countEl = document.getElementById("rCount");
+    const classEl = document.getElementById("rClass");
+    const subjEl = document.getElementById("rSubj");
+    const customWrap = document.getElementById("customWrap");
+    const classWrap = document.getElementById("classWrap");
+    const subjWrap = document.getElementById("subjWrap");
+    const hint = document.getElementById("rHint");
+
+    function updateSubjects(){
+      const cls = classEl.value;
+      subjEl.innerHTML = Object.keys(CONFIG.syllabus[cls]).map(s=>`<option value="${s}">${cap(s)}</option>`).join("");
+    }
+    function updateVis(){
+      classWrap.style.display = modeEl.value === "all" ? "none" : "";
+      subjWrap.style.display = modeEl.value === "subject" ? "" : "none";
+      customWrap.style.display = countEl.value === "custom" ? "" : "none";
+      updateHint();
+    }
+    function updateHint(){
+      const pool = Random.collect(modeEl.value, classEl.value, subjEl.value);
+      hint.textContent = `${pool.length} questions available in this pool.`;
+    }
+    modeEl.onchange = updateVis;
+    countEl.onchange = updateVis;
+    classEl.onchange = ()=>{ updateSubjects(); updateHint(); };
+    subjEl.onchange = updateHint;
+    updateSubjects(); updateVis();
+  },
+  collect(mode, cls, subj){
+    const out = [];
+    const push = (cls, subj, chapterKey, list)=>{
+      list.forEach((q, idx)=> out.push({cls, subj, chapterKey, idx, q}));
+    };
+    if (mode === "all"){
+      for (const c in questionBank) for (const s in questionBank[c]) for (const k in questionBank[c][s]) push(c,s,k, questionBank[c][s][k]);
+    } else if (mode === "class"){
+      for (const s in questionBank[cls]) for (const k in questionBank[cls][s]) push(cls,s,k, questionBank[cls][s][k]);
+    } else {
+      for (const k in questionBank[cls][subj]) push(cls,subj,k, questionBank[cls][subj][k]);
+    }
+    return out;
+  },
+  start(){
+    const mode = document.getElementById("rMode").value;
+    const cls = document.getElementById("rClass").value;
+    const subj = document.getElementById("rSubj").value;
+    const countSel = document.getElementById("rCount").value;
+    let count;
+    if (countSel === "all") count = Infinity;
+    else if (countSel === "custom") count = Math.max(1, parseInt(document.getElementById("rCustom").value)||1);
+    else count = parseInt(countSel);
+
+    const pool = Random.collect(mode, cls, subj);
+    if (!pool.length){ toast("No questions available in this pool yet"); return; }
+    shuffle(pool);
+    const chosen = pool.slice(0, isFinite(count) ? count : pool.length);
+    Quiz.startCustom({
+      title: `Random · ${cap(mode)} ${mode==='subject'?'· '+cap(subj):''} ${mode!=='all'?'· Class '+cls:''}`,
+      questions: chosen.map(x=>({...x.q, __src:{cls:x.cls, subj:x.subj, chapterKey:x.chapterKey, idx:x.idx}})),
+      mode:"random"
+    });
+  }
+};
+
+/*==========================
+  BOOKMARKS
+==========================*/
+const Bookmarks = {
+  render(){
+    Nav.setCrumb([{label:"Home", to:"home"}, {label:"Bookmarks"}]);
+    const list = Store.bookmarks();
+    const items = list.map((b, i)=>{
+      const q = questionBank[b.cls]?.[b.subj]?.[b.chapterKey]?.[b.idx];
+      if (!q) return "";
+      return `
+        <div class="card solid" style="margin-bottom:10px;">
+          <div class="spread">
+            <div>
+              <div class="small" style="color:var(--teal-700); font-weight:700; letter-spacing:.4px; text-transform:uppercase;">Class ${b.cls} · ${cap(b.subj)} · ${cap(b.chapterKey.replace("chapter","Chapter "))}</div>
+              <div style="font-family:'Fraunces',serif; color:var(--teal-900); font-size:1.05rem; margin-top:4px;">${escapeHTML(q.question)}</div>
+            </div>
+            <div class="row">
+              <button class="btn ghost" data-testid="bookmark-remove-${i}" onclick="Bookmarks.remove(${i})">Remove</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join("");
+    const empty = !list.length ? `<div class="card center"><div class="sub">No bookmarks yet. Tap the ⭐ during a quiz to save questions.</div></div>` : "";
+    return `
+      <div class="section-title">
+        <h2>Bookmarks</h2>
+        <span class="hint">${list.length} saved</span>
+      </div>
+      ${list.length ? `<div class="row" style="margin-bottom:10px;">
+        <button class="btn" data-testid="bookmark-practice" onclick="Bookmarks.practice()">Practice Bookmarks</button>
+      </div>` : ""}
+      ${empty || items}
+    `;
+  },
+  add(entry){
+    const list = Store.bookmarks();
+    const exists = list.findIndex(b => b.cls===entry.cls && b.subj===entry.subj && b.chapterKey===entry.chapterKey && b.idx===entry.idx);
+    if (exists >= 0){ list.splice(exists,1); Store.saveBookmarks(list); return false; }
+    list.push(entry); Store.saveBookmarks(list); return true;
+  },
+  isBookmarked(entry){
+    return Store.bookmarks().some(b => b.cls===entry.cls && b.subj===entry.subj && b.chapterKey===entry.chapterKey && b.idx===entry.idx);
+  },
+  remove(i){
+    const list = Store.bookmarks(); list.splice(i,1); Store.saveBookmarks(list); Nav.go("bookmarks");
+  },
+  practice(){
+    const list = Store.bookmarks();
+    const qs = list.map(b => {
+      const q = questionBank[b.cls]?.[b.subj]?.[b.chapterKey]?.[b.idx];
+      return q ? {...q, __src:{cls:b.cls, subj:b.subj, chapterKey:b.chapterKey, idx:b.idx}} : null;
+    }).filter(Boolean);
+    if (!qs.length){ toast("No bookmarked questions"); return; }
+    Quiz.startCustom({ title:"Bookmarks Practice", questions:qs, mode:"bookmarks" });
+  }
+};
+
+/*==========================
+  WRONG QUESTIONS
+==========================*/
+const Wrong = {
+  record(entry){
+    const list = Store.wrong();
+    const exists = list.findIndex(b => b.cls===entry.cls && b.subj===entry.subj && b.chapterKey===entry.chapterKey && b.idx===entry.idx);
+    if (exists < 0){ list.push(entry); Store.saveWrong(list); }
+  },
+  removeIfCorrect(entry){
+    const list = Store.wrong();
+    const i = list.findIndex(b => b.cls===entry.cls && b.subj===entry.subj && b.chapterKey===entry.chapterKey && b.idx===entry.idx);
+    if (i >= 0){ list.splice(i,1); Store.saveWrong(list); }
+  },
+  render(){
+    Nav.setCrumb([{label:"Home", to:"home"}, {label:"Wrong Questions"}]);
+    const list = Store.wrong();
+    const empty = !list.length ? `<div class="card center"><div class="sub">No wrong answers recorded — keep practicing!</div></div>` : "";
+    const items = list.map((b, i)=>{
+      const q = questionBank[b.cls]?.[b.subj]?.[b.chapterKey]?.[b.idx];
+      if (!q) return "";
+      return `<div class="card solid" style="margin-bottom:10px;">
+        <div class="small" style="color:var(--danger); font-weight:700; letter-spacing:.4px; text-transform:uppercase;">Class ${b.cls} · ${cap(b.subj)} · ${cap(b.chapterKey.replace("chapter","Chapter "))}</div>
+        <div style="font-family:'Fraunces',serif; color:var(--teal-900); font-size:1.05rem; margin-top:4px;">${escapeHTML(q.question)}</div>
+      </div>`;
+    }).join("");
+    return `
+      <div class="section-title"><h2>Wrong Questions</h2><span class="hint">${list.length} saved</span></div>
+      ${list.length ? `<div class="row" style="margin-bottom:10px; gap:8px;">
+        <button class="btn" data-testid="wrong-practice" onclick="Wrong.practice()">Practice Wrong Questions</button>
+        <button class="btn ghost" onclick="Store.saveWrong([]); Nav.go('wrongpractice');">Clear</button>
+      </div>` : ""}
+      ${empty || items}
+    `;
+  },
+  practice(){
+    const list = Store.wrong();
+    const qs = list.map(b => {
+      const q = questionBank[b.cls]?.[b.subj]?.[b.chapterKey]?.[b.idx];
+      return q ? {...q, __src:{cls:b.cls, subj:b.subj, chapterKey:b.chapterKey, idx:b.idx}} : null;
+    }).filter(Boolean);
+    if (!qs.length){ toast("No wrong questions"); return; }
+    Quiz.startCustom({ title:"Wrong Questions Practice", questions:qs, mode:"wrong" });
+  }
+};
+
+/*==========================
+  QUIZ ENGINE
+==========================*/
+const Quiz = {
+  /** Start a chapter quiz */
+  start({cls, subj, chapterNum}){
+    const chapterKey = "chapter"+chapterNum;
+    const bank = questionBank[cls][subj][chapterKey] || [];
+    if (!bank.length){ toast("Questions coming soon"); return; }
+    const s = Store.settings();
+    let questions = bank.map((q, idx)=> ({...q, __src:{cls, subj, chapterKey, idx}}));
+    if (s.shuffleQuestions) shuffle(questions);
+    if (s.shuffleOptions) questions = questions.map(q => ({...q, answers: shuffle([...q.answers])}));
+
+    State.quiz = {
+      title: `Class ${cls} · ${cap(subj)} · Chapter ${chapterNum}`,
+      cls, subj, chapterNum, chapterKey,
+      mode:"chapter",
+      questions,
+      current:0,
+      answers:new Array(questions.length).fill(null), // selected option index (or null)
+      lockedShown:new Array(questions.length).fill(false),
+      correctCount:0, wrongCount:0,
+      startedAt: Date.now(),
+      totalTime: 0,           // seconds elapsed
+      timerRemaining: computeTimerSeconds(s),
+      timerPaused: false
+    };
+    Nav.go("quiz");
+    Quiz.saveResume();
+    Quiz.startTimer();
+  },
+
+  /** Start a custom (random/bookmark/wrong) quiz */
+  startCustom({title, questions, mode}){
+    const s = Store.settings();
+    if (s.shuffleOptions) questions = questions.map(q => ({...q, answers: shuffle([...q.answers])}));
+    State.quiz = {
+      title, mode,
+      questions,
+      current:0,
+      answers:new Array(questions.length).fill(null),
+      lockedShown:new Array(questions.length).fill(false),
+      correctCount:0, wrongCount:0,
+      startedAt: Date.now(),
+      totalTime: 0,
+      timerRemaining: computeTimerSeconds(s),
+      timerPaused:false
+    };
+    Nav.go("quiz");
+    Quiz.startTimer();
+  },
+
+  resume(){
+    const r = Store.resume();
+    if (!r){ toast("Nothing to resume"); return; }
+    State.quiz = r;
+    Nav.go("quiz");
+    Quiz.startTimer();
+  },
+
+  saveResume(){
+    if (!State.quiz) return;
+    if (State.quiz.mode !== "chapter") return; // only persist chapter quizzes
+    const q = State.quiz;
+    Store.saveResume({
+      ...q,
+      answered: q.answers.filter(a=>a!==null).length,
+      total: q.questions.length
+    });
+  },
+
+  render(){
+    const q = State.quiz;
+    if (!q){ Nav.go("home"); return ""; }
+
+    if (q.mode === "chapter"){
+      Nav.setCrumb([
+        {label:"Home", to:"home"},
+        {label:"Class "+q.cls, to:"class", params:{cls:q.cls}},
+        {label:cap(q.subj), to:"subject", params:{cls:q.cls, subj:q.subj}},
+        {label:"Chapter "+q.chapterNum}
+      ]);
+    } else {
+      Nav.setCrumb([{label:"Home", to:"home"}, {label:q.title}]);
+    }
+
+    const cur = q.questions[q.current];
+    const answered = q.answers[q.current];
+    const locked = answered !== null;
+    const progressPct = Math.round((q.current + (locked?1:0)) / q.questions.length * 100);
+    const total = q.questions.length;
+    const remaining = total - q.answers.filter(a=>a!==null).length;
+    const accuracy = (q.correctCount+q.wrongCount) ? Math.round(q.correctCount/(q.correctCount+q.wrongCount)*100) : 0;
+    const bookmarked = cur.__src ? Bookmarks.isBookmarked(cur.__src) : false;
+
+    const timerHTML = q.timerRemaining !== null
+      ? `<div class="timer-pill" id="timerPill" data-testid="quiz-timer">${formatTime(q.timerRemaining)}</div>`
+      : `<div class="timer-pill" style="background:transparent;color:var(--muted);">No timer</div>`;
+
+    const opts = cur.answers.map((a, idx)=>{
+      const letter = String.fromCharCode(65+idx);
+      let cls = "opt";
+      if (locked){
+        cls += " locked";
+        if (a.correct) cls += " correct";
+        if (idx === answered && !a.correct) cls += " wrong";
+      }
+      return `
+        <button class="${cls}" data-testid="quiz-option-${idx}" onclick="${locked?'':`Quiz.pick(${idx})`}">
+          <div class="badge">${letter}</div>
+          <div>${escapeHTML(a.text)}</div>
+        </button>`;
+    }).join("");
+
+    const explanation = locked && cur.explanation ? `
+      <div class="explanation show">
+        <strong>Explanation:</strong> ${escapeHTML(cur.explanation)}
+      </div>
+    ` : "";
+
+    const navigator = `
+      <div class="navigator" data-testid="quiz-navigator">
+        ${q.questions.map((_, i)=>{
+          const a = q.answers[i];
+          let cls = "nav-cell";
+          if (i === q.current) cls += " current";
+          else if (a !== null){
+            const isRight = q.questions[i].answers[a]?.correct;
+            cls += isRight ? " done" : " wrongly";
+          }
+          return `<button class="${cls}" data-testid="quiz-nav-${i}" onclick="Quiz.goto(${i})">${i+1}</button>`;
+        }).join("")}
+      </div>`;
+
+    return `
+      <div class="quiz-head">
+        <div class="qh-card">
+          <div class="row" style="justify-content:space-between;">
+            <div>
+              <div class="label">${q.mode==="chapter"?"Chapter Quiz":"Custom Session"}</div>
+              <div class="value" style="font-size:1.1rem;">${escapeHTML(q.title)}</div>
+            </div>
+            <button class="q-bookmark ${bookmarked?'active':''}" data-testid="quiz-bookmark" title="Bookmark question" onclick="Quiz.toggleBookmark()">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="${bookmarked?'currentColor':'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 17.3-6.18 3.7 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.73 1.64 7.03z"/></svg>
+            </button>
+          </div>
+          <div class="pbar" style="margin-top:10px;"><span style="width:${progressPct}%"></span></div>
+          <div class="row" style="justify-content:space-between; margin-top:8px;">
+            <div class="small">Question ${q.current+1} of ${total} · ${remaining} remaining</div>
+            ${timerHTML}
+          </div>
+        </div>
+        <div class="qh-card qh-score">
+          <div class="row"><span class="label">Score</span><span class="value" data-testid="quiz-score">${q.correctCount}/${q.correctCount+q.wrongCount}</span></div>
+          <div class="row"><span class="label">Correct</span><span class="value" style="color:var(--success)">${q.correctCount}</span></div>
+          <div class="row"><span class="label">Wrong</span><span class="value" style="color:var(--danger)">${q.wrongCount}</span></div>
+          <div class="row"><span class="label">Accuracy</span><span class="value">${accuracy}%</span></div>
+        </div>
+      </div>
+
+      <div class="qbox">
+        <div class="q-text" data-testid="quiz-question">${escapeHTML(cur.question)}</div>
+        <div class="options" data-testid="quiz-options">${opts}</div>
+        ${explanation}
+        <div class="q-actions">
+          <div class="left">
+            <button class="btn ghost" data-testid="quiz-prev" ${q.current===0?'disabled':''} onclick="Quiz.prev()">← Previous</button>
+            ${q.timerRemaining!==null?`<button class="btn ghost" onclick="Quiz.togglePause()" data-testid="quiz-pause">${q.timerPaused?'Resume':'Pause'}</button>`:''}
+          </div>
+          <div class="right">
+            <button class="btn soft" data-testid="quiz-finish" onclick="Quiz.finishConfirm()">Finish</button>
+            <button class="btn" data-testid="quiz-next" ${!locked?'disabled':''} onclick="Quiz.next()">${q.current===total-1?'View Result':'Next →'}</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card solid" style="margin-top:12px;">
+        <div class="section-title" style="margin:0 0 8px;"><h2 style="font-size:1.05rem;">Question Navigator</h2><span class="hint">Green = correct · Red = wrong · Blue = current</span></div>
+        ${navigator}
+      </div>
+    `;
+  },
+
+  pick(idx){
+    const q = State.quiz; if (!q) return;
+    if (q.answers[q.current] !== null) return;
+    q.answers[q.current] = idx;
+    const isRight = !!q.questions[q.current].answers[idx].correct;
+    if (isRight){
+      q.correctCount++;
+      // if this was in wrong bank, remove
+      if (q.questions[q.current].__src) Wrong.removeIfCorrect(q.questions[q.current].__src);
+    }else{
+      q.wrongCount++;
+      if (q.questions[q.current].__src) Wrong.record(q.questions[q.current].__src);
+    }
+    Quiz.saveResume();
+    Nav.go("quiz");
+  },
+
+  goto(i){
+    const q = State.quiz; if (!q) return;
+    if (i<0 || i>=q.questions.length) return;
+    q.current = i;
+    Nav.go("quiz");
+  },
+  next(){
+    const q = State.quiz; if (!q) return;
+    if (q.current === q.questions.length - 1){ Quiz.finish(); return; }
+    q.current++;
+    Nav.go("quiz");
+  },
+  prev(){
+    const q = State.quiz; if (!q) return;
+    if (q.current>0){ q.current--; Nav.go("quiz"); }
+  },
+  toggleBookmark(){
+    const q = State.quiz; if (!q) return;
+    const cur = q.questions[q.current];
+    if (!cur.__src){ toast("Cannot bookmark this question"); return; }
+    const added = Bookmarks.add(cur.__src);
+    toast(added ? "Bookmarked ⭐" : "Bookmark removed");
+    Nav.go("quiz");
+  },
+  finishConfirm(){
+    confirmDialog("Finish quiz?", "Any unanswered questions will be marked incomplete.", ()=> Quiz.finish());
+  },
+  finish(){
+    const q = State.quiz; if (!q) return;
+    Quiz.stopTimer();
+    const total = q.questions.length;
+    const correct = q.correctCount;
+    const wrong = q.wrongCount;
+    const answered = correct+wrong;
+    const pct = total ? Math.round(correct/total*100) : 0;
+    const timeTaken = q.totalTime;
+    const accuracy = answered ? Math.round(correct/answered*100) : 0;
+    // save progress if chapter quiz
+    if (q.mode === "chapter"){
+      const p = Store.progress();
+      const key = `${q.cls}::${q.subj}::chapter${q.chapterNum}`;
+      const prev = p[key] || {attempts:0, highest:0, correct:0, wrong:0, attempted:0, avgTime:0};
+      const attempts = prev.attempts + 1;
+      const highest = Math.max(prev.highest, pct);
+      const avgTime = total ? Math.round(((prev.avgTime*prev.attempts) + (timeTaken/total)) / attempts) : prev.avgTime;
+      p[key] = {
+        attempts,
+        highest,
+        pct,
+        correct: prev.correct + correct,
+        wrong: prev.wrong + wrong,
+        attempted: prev.attempted + answered,
+        avgTime
+      };
+      Store.saveProgress(p);
+      Store.clearResume();
+    }
+    State.quiz.__result = { total, correct, wrong, answered, pct, accuracy, timeTaken };
+    Nav.go("result");
+  },
+
+  /* Timer */
+  startTimer(){
+    const q = State.quiz; if (!q) return;
+    Quiz.stopTimer();
+    State.timerTick = setInterval(()=>{
+      if (!State.quiz) return Quiz.stopTimer();
+      if (State.quiz.timerPaused) return;
+      State.quiz.totalTime++;
+      if (State.quiz.timerRemaining !== null){
+        State.quiz.timerRemaining--;
+        const pill = document.getElementById("timerPill");
+        if (pill){
+          pill.textContent = formatTime(State.quiz.timerRemaining);
+          pill.classList.toggle("warn", State.quiz.timerRemaining <= 60 && State.quiz.timerRemaining > 15);
+          pill.classList.toggle("danger", State.quiz.timerRemaining <= 15);
+        }
+        if (State.quiz.timerRemaining <= 0){
+          Quiz.stopTimer();
+          toast("Time's up — auto submitting");
+          Quiz.finish();
+        }
+      }
+    }, 1000);
+  },
+  stopTimer(){ if (State.timerTick) { clearInterval(State.timerTick); State.timerTick = null; } },
+  togglePause(){
+    const q = State.quiz; if (!q) return;
+    q.timerPaused = !q.timerPaused;
+    Nav.go("quiz");
+  }
+};
+
+/*==========================
+  RESULTS
+==========================*/
+const Result = {
+  render(){
+    const q = State.quiz;
+    if (!q || !q.__result){ Nav.go("home"); return ""; }
+    Nav.setCrumb([{label:"Home", to:"home"}, {label:"Result"}]);
+    const r = q.__result;
+
+    const backButtons = q.mode === "chapter" ? `
+      <button class="btn ghost" data-testid="result-back-chapter" onclick="Nav.go('subject', {cls:'${q.cls}', subj:'${q.subj}'})">Back to Chapters</button>
+      <button class="btn ghost" data-testid="result-back-subject" onclick="Nav.go('class', {cls:'${q.cls}'})">Back to Subjects</button>
+    ` : "";
+
+    return `
+      <div class="result-hero">
+        <div class="small" style="letter-spacing:.5px; text-transform:uppercase; opacity:.9;">Quiz Complete</div>
+        <h1>${escapeHTML(q.title)}</h1>
+        <div class="result-ring" style="--p:${r.pct}"><div>${r.pct}%</div></div>
+        <div class="row" style="justify-content:center; gap:14px; flex-wrap:wrap;">
+          <span class="chip dark" data-testid="result-correct">${r.correct} Correct</span>
+          <span class="chip dark">${r.wrong} Wrong</span>
+          <span class="chip dark">${r.total - r.answered} Skipped</span>
+          <span class="chip dark">${r.accuracy}% Accuracy</span>
+          <span class="chip dark">${formatTime(r.timeTaken)}</span>
+        </div>
+      </div>
+      <div class="row" style="margin:16px 0; gap:8px; flex-wrap:wrap; justify-content:center;">
+        <button class="btn" data-testid="result-retry" onclick="Result.retry()">Retry</button>
+        <button class="btn soft" data-testid="result-review" onclick="Nav.go('review')">Review Answers</button>
+        ${backButtons}
+        <button class="btn ghost" data-testid="result-home" onclick="Nav.go('home')">Back Home</button>
+      </div>
+    `;
+  },
+  retry(){
+    const q = State.quiz;
+    if (!q) return Nav.go("home");
+    if (q.mode === "chapter"){
+      Quiz.start({cls:q.cls, subj:q.subj, chapterNum:q.chapterNum});
+    } else {
+      // rebuild from original questions
+      Quiz.startCustom({title:q.title, questions:q.questions.map(x=>({...x})), mode:q.mode});
+    }
+  }
+};
+
+/*==========================
+  REVIEW MODE
+==========================*/
+const Review = {
+  render(){
+    const q = State.quiz;
+    if (!q){ Nav.go("home"); return ""; }
+    Nav.setCrumb([{label:"Home", to:"home"}, {label:"Result", to:"result"}, {label:"Review"}]);
+    const items = q.questions.map((qq, i)=>{
+      const sel = q.answers[i];
+      const opts = qq.answers.map((a, idx)=>{
+        let cls = "opt locked";
+        if (a.correct) cls += " correct";
+        if (idx === sel && !a.correct) cls += " wrong";
+        const letter = String.fromCharCode(65+idx);
+        return `<div class="${cls}"><div class="badge">${letter}</div><div>${escapeHTML(a.text)}</div></div>`;
+      }).join("");
+      return `
+        <div class="qbox" style="margin-bottom:12px;">
+          <div class="small" style="color:var(--teal-700); font-weight:700; letter-spacing:.4px; text-transform:uppercase;">Question ${i+1} · ${sel===null?"Skipped":(qq.answers[sel]?.correct?"Correct":"Wrong")}</div>
+          <div class="q-text">${escapeHTML(qq.question)}</div>
+          <div class="options">${opts}</div>
+          ${qq.explanation?`<div class="explanation show"><strong>Explanation:</strong> ${escapeHTML(qq.explanation)}</div>`:""}
+        </div>
+      `;
+    }).join("");
+    return `
+      <div class="section-title"><h2>Review Answers</h2><span class="hint">${q.questions.length} questions</span></div>
+      ${items}
+      <div class="row" style="justify-content:center; margin-top:10px;">
+        <button class="btn ghost" onclick="Nav.go('result')">Back to Result</button>
+        <button class="btn" onclick="Nav.go('home')">Home</button>
+      </div>
+    `;
+  }
+};
+
+/*==========================
+  HELPERS
+==========================*/
+function escapeHTML(s){
+  return String(s??"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function cap(s){ if (!s) return s; return s.charAt(0).toUpperCase()+s.slice(1); }
+function shuffle(arr){
+  for (let i=arr.length-1; i>0; i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+function totalChaptersInClass(cls){
+  let n=0; for (const s in CONFIG.syllabus[cls]) n += CONFIG.syllabus[cls][s]; return n;
+}
+function completedChaptersInSubject(cls, subj){
+  const p = Store.progress(); const total = CONFIG.syllabus[cls][subj]; let done=0;
+  for (let i=1;i<=total;i++){ if ((p[`${cls}::${subj}::chapter${i}`]?.pct||0) >= 100) done++; }
+  return done;
+}
+function completedChaptersInClass(cls){
+  let done=0; for (const s in CONFIG.syllabus[cls]) done += completedChaptersInSubject(cls, s); return done;
+}
+function computeTimerSeconds(s){
+  const m = s.timerMode;
+  if (m === "none") return null;
+  if (m === "custom") return Math.max(1, parseInt(s.timerCustom)||1) * 60;
+  const n = parseInt(m); return isNaN(n) ? null : n*60;
+}
+function formatTime(sec){
+  sec = Math.max(0, sec|0);
+  const m = Math.floor(sec/60); const s = sec%60;
+  return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+}
+function toast(msg){
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  if (State.toastTimer) clearTimeout(State.toastTimer);
+  State.toastTimer = setTimeout(()=> el.classList.remove("show"), 1800);
+}
+function confirmDialog(title, message, onConfirm){
+  const dlg = document.getElementById("dialog");
+  dlg.innerHTML = `
+    <h3>${escapeHTML(title)}</h3>
+    <p>${escapeHTML(message)}</p>
+    <div class="row" style="justify-content:flex-end; gap:8px;">
+      <button class="btn ghost" data-testid="dialog-cancel" onclick="closeDialog()">Cancel</button>
+      <button class="btn danger" data-testid="dialog-confirm" id="dlgConfirm">Confirm</button>
+    </div>`;
+  document.getElementById("overlay").classList.add("show");
+  document.getElementById("dlgConfirm").onclick = ()=>{ closeDialog(); onConfirm(); };
+}
+function closeDialog(){ document.getElementById("overlay").classList.remove("show"); }
+
+/* Ripple effect for buttons */
+document.addEventListener("click", (e)=>{
+  const btn = e.target.closest(".btn");
+  if (!btn || btn.disabled) return;
+  const rect = btn.getBoundingClientRect();
+  const size = Math.max(rect.width, rect.height);
+  const r = document.createElement("span");
+  r.className = "ripple";
+  r.style.width = r.style.height = size + "px";
+  r.style.left = (e.clientX - rect.left - size/2) + "px";
+  r.style.top  = (e.clientY - rect.top  - size/2) + "px";
+  btn.appendChild(r);
+  setTimeout(()=> r.remove(), 650);
+});
+
+/* Close overlay on backdrop click */
+document.getElementById("overlay").addEventListener("click", e=>{
+  if (e.target.id === "overlay") closeDialog();
+});
+
+/*==========================
+  ROUTE REGISTRATION
+==========================*/
+Nav.register("login", ()=> Login.render());
+Nav.register("login:attach", ()=> Login.attach());
+Nav.register("home", ()=> Home.render());
+Nav.register("class", (p)=> ClassView.render(p));
+Nav.register("subject", (p)=> SubjectView.render(p));
+Nav.register("quiz", ()=> Quiz.render());
+Nav.register("result", ()=> Result.render());
+Nav.register("review", ()=> Review.render());
+Nav.register("stats", ()=> Statistics.render());
+Nav.register("settings", ()=> Settings.render());
+Nav.register("search", ()=> Search.render());
+Nav.register("search:attach", ()=> Search.attach());
+Nav.register("random", ()=> Random.render());
+Nav.register("random:attach", ()=> Random.attach());
+Nav.register("bookmarks", ()=> Bookmarks.render());
+Nav.register("wrongpractice", ()=> Wrong.render());
+
+/*==========================
+  INITIALIZATION
+==========================*/
+(function init(){
+  // Load background image variable dynamically (in case user changes it above)
+  // Already applied via CSS `url("background.jpg")`, so we hint the browser to prefetch:
+  const img = new Image(); img.src = CONFIG.background;
+
+  // Restore user session
+  const savedMobile = Store.loadMobile();
+  if (savedMobile && /^\d{10}$/.test(savedMobile)){
+    State.mobile = savedMobile;
+    Settings.applyAll(Store.settings());
+    Nav.go("home");
+  } else {
+    Nav.go("login");
+  }
+
+  // Handle browser back/forward via hashless simple guard
+  window.addEventListener("beforeunload", ()=>{
+    if (State.quiz && State.quiz.mode === "chapter"){
+      Quiz.saveResume();
+    }
+  });
+})();
+</script>
+</body>
+</html>
